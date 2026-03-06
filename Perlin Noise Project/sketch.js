@@ -26,11 +26,13 @@ function generateTerrain() {
   noiseTime = 12 + offset;
   offset += 0.05;
 
+  // variables for heighest point
   let heighestY = 0;
   let heighestX = 0;
 
+  // variables for all the values
   let total = 0;
-  let count =0;
+  let count = 0;
 
   for (x = 0; x <= width; x += wid) {
     // generate noise() rectangle(negative height)
@@ -44,21 +46,23 @@ function generateTerrain() {
 
     noiseTime += noiseSpeed;
 
-    
+
 
     if (hei >= heighestY) {//find the heighest Y value
       heighestY = hei;
       heighestX = x;
     }
-    total += hei;
-    count ++;
-    
+
+    total += hei;//total height
+    count++;
+
   }
 
-  let averageY = total / count;
+  let averageY = total / count;// calculate average
   strokeWeight(10);
   stroke("red");
-  line(0, averageY, 1000, averageY);
+  line(0, averageY, 1000, averageY);// draw the average line
+
   if (keyIsDown(37)) {//left arrow
     wid -= 1;
   } else if (keyIsDown(39)) {//right arrow
@@ -66,7 +70,9 @@ function generateTerrain() {
   }
   strokeWeight(1);
   stroke("black");
-  wid = constrain(wid, 1, 50);
+
+  wid = constrain(wid, 1, 50);// limit the width 
+  // so it won't get stucked
   drawFlag(heighestX, 800 - heighestY);
 
 }
