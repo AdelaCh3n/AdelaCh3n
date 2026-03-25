@@ -51,5 +51,5 @@ function keyPressed(){
   if( key === '1')currentProv = "SK";
   if( key === '2')currentProv = "AB";
   if( key === '3')currentProv = "ON";
-  if( key === 'x')items.pop();
+  if( key === 'x' || key === 'X')items.pop();
 }
