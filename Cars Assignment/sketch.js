@@ -5,15 +5,18 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
+let myVehicles =[];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   rectMode(CENTER);
+  myVehicles = new vehicles(random(width), )
 }
 
 function draw() {
   background(220);
   drawRoad();
+  
   
 
 }
@@ -81,5 +84,26 @@ class vehicles {
     else if (this.direc === 1){//left
       this.xSpeed -=15;
     } 
+  }
+
+  changeColor(){
+
+    this.color = fill(random(255), random(255), random(255));
+    
+  }
+
+  action(){
+    this.move();
+    this.display();
+    
+    if (random(1) < 0.01) {
+      this.speedUp();
+    }
+    if (random(1) < 0.01) {
+      this.speedDown();
+    }
+    if (random(1) < 0.01) {
+      this.changeColor();
+    }
   }
 }
