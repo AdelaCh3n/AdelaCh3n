@@ -8,15 +8,27 @@
 let eastbound = []; 
 let westbound = [];
 
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   rectMode(CENTER);
-  // myVehicles = new vehicles(random(width), random(height), 0,  0, 20);
-  for(let i = 0; i <= 20; i++){
+  
+  for(let i = 0; i <= 10; i++){
     eastbound.push(new vehicles(0, random(0.22*height, 0.48*height), Math.floor(random(0,2)), 0, 2));
   }
+  
+  for(let i = 0; i <= 10; i++){
+    westbound.push(new vehicles(width, random(0.52*height, 0.78*height), Math.floor(random(0,2)), 1, -2));
+  }
+}
 
-  for(let i = 0; i <= 20; i++){
+
+function mousePressed(){
+  if (mouseButton === LEFT){
+    eastbound.push(new vehicles(0, random(0.22*height, 0.48*height), Math.floor(random(0,2)), 0, 2));
+  }
+  
+  if (mouseButton === RIGHT){
     westbound.push(new vehicles(width, random(0.52*height, 0.78*height), Math.floor(random(0,2)), 1, -2));
   }
 }
@@ -30,6 +42,8 @@ function draw() {
   for( let i = 0; i < eastbound.length; i++){
     westbound[i].action();
   }
+  eastbound.action();
+  westbound.action();
 
 }
 function drawCar(x, y, r, g, b) {
