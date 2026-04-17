@@ -68,12 +68,14 @@ function mousePressed(){
       flip(getCurrentX(), getCurrentY());
       //flip the neighbours
       if(flipMode === "CROSS"){
+        //cross mode
         if(x-1 >= 0) flip(x-1, y);
         if(y-1 >= 0) flip(x, y-1);
         if(x+1 <= width) flip(x+1, y);
         if(y+1 <= height) flip(x, y+1);
       }
       else{
+        //square mode
         if(x-1 >= 0) flip(x-1, y);
         if(y-1 >= 0) flip(x, y-1);
         if(x-1 >= 0 && y-1 >= 0) flip(x-1, y-1);
@@ -108,6 +110,7 @@ function getCurrentY(){
 }
 
 function checkWin(){
+  //check if every grid is the same color
   let clearCount = 0;
   for( let y = 0; y < rows; y++){ 
     for( let x = 0; x < cols; x++){ 
@@ -121,6 +124,7 @@ function checkWin(){
 }
 
 function randomGrid(){
+  //randomnize the grid
   let randomColor = [0, 255];
   for( let y = 0; y < rows; y++){ 
     for( let x = 0; x < cols; x++){
@@ -130,24 +134,28 @@ function randomGrid(){
 }
 
 function overlay(){
-  fill(0,255,0,40);
-  let x = getCurrentX();
-  let y = getCurrentY();
-  
-  if(keyIsPressed && keyCode === SHIFT){// CHEATER
-    square(x * tilesize, y * tilesize, tilesize);
-  }else{
-    square(x * tilesize, y * tilesize, tilesize);
-    if(flipMode === "CROSS"){
-      if(x-1 >= 0) square((x-1)* tilesize, y* tilesize, tilesize);
-      if(y-1 >= 0) square(x * tilesize, (y-1)* tilesize, tilesize);
-      if(x+1 <= width) square((x+1)* tilesize, y* tilesize, tilesize);
-      if(y+1 <= height) square(x * tilesize, (y+1)* tilesize, tilesize);
+  // indicate which sqares will be impacted on a click
+  if (mouseX < width && mouseY < height){
+    fill(0,255,0,40);// only show the color when mouse is in the canvas
+    
+    let x = getCurrentX();
+    let y = getCurrentY();
+    
+    if(keyIsPressed && keyCode === SHIFT){// CHEATER
+      square(x * tilesize, y * tilesize, tilesize);
+    }else{
+      square(x * tilesize, y * tilesize, tilesize);
+      if(flipMode === "CROSS"){//cross mode
+        if(x-1 >= 0) square((x-1)* tilesize, y* tilesize, tilesize);
+        if(y-1 >= 0) square(x * tilesize, (y-1)* tilesize, tilesize);
+        if(x+1 <= width) square((x+1)* tilesize, y* tilesize, tilesize);
+        if(y+1 <= height) square(x * tilesize, (y+1)* tilesize, tilesize);
+      }
+      else{ //SQUARE
+        if(x-1 >= 0) square((x-1)* tilesize, y* tilesize, tilesize);
+        if(y-1 >= 0) square(x * tilesize, (y-1)* tilesize, tilesize);
+        if(x-1 >= 0 && y-1 >= 0) square((x-1) * tilesize, (y-1)* tilesize, tilesize);
+      } 
     }
-    else{ //SQUARE
-      if(x-1 >= 0) square((x-1)* tilesize, y* tilesize, tilesize);
-      if(y-1 >= 0) square(x * tilesize, (y-1)* tilesize, tilesize);
-      if(x-1 >= 0 && y-1 >= 0) square((x-1) * tilesize, (y-1)* tilesize, tilesize);
-  } 
-}
+  }
 }
