@@ -22,11 +22,15 @@ let rows = grid.length;
 let cols = grid[0].length;
 let tilesize = 60;
 let flipMode = "CROSS";
-
+let mouseClicked = 0;
+let timerS = 0;
+let timerM = 0;
+let win = 0; //0 - not winning yet, 1 = win
 
 function setup() {
-  createCanvas(cols*tilesize, rows* tilesize);
+  createCanvas(cols*tilesize +200, rows* tilesize);
   randomGrid()
+  win = 0;
 }
 
 function draw() {
@@ -34,9 +38,17 @@ function draw() {
   renderGrid();
   textSize(20);
   fill("red");
-  text(getCurrentX() + "," + getCurrentY(), mouseX, mouseY);
+  if (mouseX < cols*tilesize && mouseY < rows* tilesize)text(getCurrentX() + "," + getCurrentY(), mouseX, mouseY);
   checkWin();
   overlay();
+  push()
+  fill(0);
+  text("mouse clicked: "+mouseClicked,610,20);
+  pop();
+  timer();
+
+  
+  
 }
 
 function flip(x, y){
@@ -51,12 +63,29 @@ function keyPressed(){
   }
 }
 
+function timer(){
+  //a timer
+  push()
+  fill(0);
+  if(mouseClicked > 0  && frameCount %60 === 0 && win !== 1) {
+    //record time after first click and stop when win 
+    timerS++;
+    if (timerS % 60 === 0) {
+      timerS = 0;
+      timerM ++;
+    }
+  }
+  text("timer: "+ timerM + " min "+timerS+" s", 610, 40);
+  pop();
+}
+
 
 function mousePressed(){
-
+  
+  
   //only do the flip if mouse is on the canvas
-  if (mouseX < width && mouseY < height){
-
+  if (mouseX < cols*tilesize && mouseY < rows* tilesize){
+    mouseClicked++;
     let x = getCurrentX();
     let y = getCurrentY();
 
@@ -110,17 +139,22 @@ function getCurrentY(){
 }
 
 function checkWin(){
+  
   //check if every grid is the same color
-  let clearCount = 0;
   for( let y = 0; y < rows; y++){ 
     for( let x = 0; x < cols; x++){ 
-      if (grid[y][x] !== grid[0][0]) return; 
+      if (grid[y][x] !== grid[0][0]) {
+        win = 0;
+        return; 
+      }
     }
   }
+  push();
   textSize(30);
   textAlign ( CENTER , CENTER );
-  text("YOU WIN!!!", width/2, height/2);
-  
+  text("YOU WIN!!!", cols * tilesize/2, rows * tilesize/2);
+  pop();
+  win = 1;
 }
 
 function randomGrid(){
@@ -135,7 +169,7 @@ function randomGrid(){
 
 function overlay(){
   // indicate which sqares will be impacted on a click
-  if (mouseX < width && mouseY < height){
+  if (mouseX < cols*tilesize && mouseY < rows* tilesize){
     fill(0,255,0,40);// only show the color when mouse is in the canvas
     
     let x = getCurrentX();
@@ -148,8 +182,8 @@ function overlay(){
       if(flipMode === "CROSS"){//cross mode
         if(x-1 >= 0) square((x-1)* tilesize, y* tilesize, tilesize);
         if(y-1 >= 0) square(x * tilesize, (y-1)* tilesize, tilesize);
-        if(x+1 <= width) square((x+1)* tilesize, y* tilesize, tilesize);
-        if(y+1 <= height) square(x * tilesize, (y+1)* tilesize, tilesize);
+        if(x <9) square((x+1)* tilesize, y* tilesize, tilesize);
+        if(y < rows* tilesize) square(x * tilesize, (y+1)* tilesize, tilesize);
       }
       else{ //SQUARE
         if(x-1 >= 0) square((x-1)* tilesize, y* tilesize, tilesize);
@@ -159,3 +193,4 @@ function overlay(){
     }
   }
 }
+
