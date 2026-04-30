@@ -4,117 +4,88 @@
 //
 // Working with images
 // translation between 2D and 1D indices
-// Part 2: Using Video
 
 
 let myImage;
-let myVideo;
 
-function preload(){
+
+function preload() {
   //called BEFORE setup. Won't conclude untill all loads are complete
-  myImage = loadImage("assets/aviator.png")
+  myImage = loadImage("assets/nuit.jpg")
 }
 
 function setup() {
-  //createCanvas(myImage.width, myImage.height);
-  createCanvas(640, 480);
-  myVideo = createCapture(VIDEO)
+  createCanvas(myImage.width, myImage.height);
   pixelDensity(1);
-  // myVideo.hide();
+
 }
 
 function draw() {
-  
-  // image(myImage, 0, 0);
-  image(myVideo,0,0);
+
+  image(myImage, 0, 0);
+
   // access and modify the pixels on the canvas
   loadPixels();  //dumps data from canvas into array
-  // boost();
-  // greyscale();
-  // updatePixels();
-  background(163, 11, 37);
-  textImage();
+  xBlur(5);
+  updatePixels();
 }
 
-function textImage(){
-  fill(255);
-  let scaleAmount = 4;
-  textSize(scaleAmount);
-  for( let x = 0; x < width; x+= scaleAmount){
-    for(let y = 0; y< height; y += scaleAmount){
-      let avg = getAvg(x,y); // 0-255
-      if (avg > 130) {
-        push()
-        fill(216, 240, 62);
-        text("T",x,y);
-        pop()
-      }
-      else if(avg > 100){
-        push()
-        fill(217, 174, 22);
-        text("x",x,y);
-        pop()
-      }
-      else if(avg > 70){
-        push()
-        fill(199, 139, 8);
-        text(":",x,y);
-        pop()
-      }
-      else if(avg > 35) {
-        push()
-        fill(161, 35, 13);
-        text(".",x,y);
-        pop()
-      }
+function xBlur(radius) {
+  let copy = structuredClone(pixels);
+
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+
+      let avg = getAvg(x, y, radius, copy);
+      let index = ((y * width) + x) * 4;
+
+      pixels[index] = avg[0];
+      pixels[index + 1] = avg[1];
+      pixels[index + 2] = avg[2];
     }
   }
 }
 
 
-function boost(){
-  //brightening filter
-  let boostAmount = map(mouseX,0,width, -100, 100);
-  for(let i = 0; i<pixels.length;i+=4){
-    let r = pixels[i] +boostAmount;
-    let g = pixels[i+1] +boostAmount;
-    let b = pixels[i+2] +boostAmount;
-    setPixelOneD(i,r,g,b);
-  }
-}
 
-function getAvg(x,y){
-  //return average intensiy of rgb
-  // at (x,y)
-  let index = ((y*width) + x)*4;
-  let r = pixels[index];
-  let g = pixels[index+1];
-  let b = pixels[index+2];
-  return (r+g+b) / 3
-  
-}
+function getAvg(x, y, radius, src) {
+  //return average intensity(R,G,B indivisually)
+  //for itself and its diagonal neighbours 
+  //of a particular distance (radius).
+  let r = 0, g = 0, b = 0;
+  let count = 0;
+  for (let d = -radius; d <= radius; d++) {
+    let coords = [
+      [x + d, y + d],
+      [x + d, y - d]
+    ];
+    for (let i = 0; i < coords.length; i++) {
+      let nx = coords[i][0];
+      let ny = coords[i][1];
+      if (nx >= 0 && nx < width && ny >= 0 && ny < height) {
+        let index = ((ny * width) + nx) * 4;
+        r += src[index];
+        g += src[index + 1];
+        b += src[index + 2];
+        count++;
 
-function greyscale(){
-  //use the average intensity of each pixel
-  //to represent it as a shade of grey
-  for (let x = 0; x < width; x++){
-    for (let y = 0; y < height; y++){
-      let avg = getAvg(x,y);
-      setpixel(x,y,avg,avg,avg);
+      }
     }
   }
+  return [r / count, g / count, b / count];
 }
 
-function setpixel(x,y,r,g,b){
+
+function setpixel(x, y, r, g, b) {
   //x,y -> pixel location
   //r,g,b -> color values
-  let index = ((y*width) + x)*4;
-  setPixelOneD(index,r,g,b);
+  let index = ((y * width) + x) * 4;
+  setPixelOneD(index, r, g, b);
 }
 
-function setPixelOneD(pos,r,g,b){
+function setPixelOneD(pos, r, g, b) {
   pixels[pos] = r;
-  pixels[pos+1] = g;
-  pixels[pos+2] = b;
+  pixels[pos + 1] = g;
+  pixels[pos + 2] = b;
 }
 
