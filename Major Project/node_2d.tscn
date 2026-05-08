@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://wb8xtcc7uvtf"]
+
+[ext_resource type="Texture2D" uid="uid://cxhv6op06bhhc" path="res://assets/mainGame/background.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://yy4mc4gpw7h" path="res://assets/mainGame/person.png" id="2_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://cysof3skqgl7e" path="res://assets/mainGame/closet.png" id="3_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://mufo6d2t8cwm" path="res://assets/mainGame/wearing/0A.png" id="3_kq1c5"]
+[ext_resource type="Texture2D" uid="uid://dbdsmbkwobjce" path="res://assets/mainGame/closet/buttons/0.png" id="4_hqns4"]
+[ext_resource type="Texture2D" uid="uid://6u40qrn7d61h" path="res://assets/mainGame/wearing/0B.png" id="4_ornx7"]
+[ext_resource type="Texture2D" uid="uid://dpvcqijqx8r7v" path="res://assets/mainGame/wearing/1A.png" id="5_cnnru"]
+[ext_resource type="Texture2D" uid="uid://dcsc4oqnpsxwr" path="res://assets/mainGame/closet/buttons/1.png" id="5_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://d4mnlsb5q5ime" path="res://assets/mainGame/closet/buttons/2.png" id="6_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://hkguti01hpaq" path="res://assets/mainGame/wearing/1B.png" id="6_540hr"]
+[ext_resource type="Texture2D" uid="uid://fdjw7coqxv71" path="res://assets/mainGame/wearing/2A.png" id="7_6ip5v"]
+[ext_resource type="Texture2D" uid="uid://cq0lcq2eet5nc" path="res://assets/mainGame/closet/buttons/3.png" id="7_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://bsw71bnsanyk0" path="res://assets/mainGame/closet/buttons/4.png" id="8_d2bti"]
+[ext_resource type="Texture2D" uid="uid://yhm3tmy5wjqj" path="res://assets/mainGame/wearing/2B.png" id="8_q5dlx"]
+[ext_resource type="Texture2D" uid="uid://dnepafpnc4kho" path="res://assets/mainGame/wearing/3A.png" id="9_c4wnb"]
+[ext_resource type="Texture2D" uid="uid://cwlet4iyti2fv" path="res://assets/mainGame/closet/buttons/5.png" id="9_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://b5vvwv5kdcg5e" path="res://assets/mainGame/wearing/3B.png" id="10_7plk7"]
+[ext_resource type="Texture2D" uid="uid://npjvpi2m01in" path="res://assets/mainGame/wearing/4A.png" id="11_fbwgr"]
+[ext_resource type="Texture2D" uid="uid://b6om0hpbcltn0" path="res://assets/mainGame/wearing/4B.png" id="12_7mj2a"]
+[ext_resource type="Texture2D" uid="uid://bh6dloc302326" path="res://assets/mainGame/wearing/5A.png" id="13_fshgd"]
+[ext_resource type="Texture2D" uid="uid://lqi0mg8imbky" path="res://assets/mainGame/wearing/5B.png" id="14_lbrxf"]
+[ext_resource type="Texture2D" uid="uid://dtm77e4h120vc" path="res://assets/mainGame/closet/buttons/0-on.png" id="18_540hr"]
+[ext_resource type="Texture2D" uid="uid://dm11vev4jwo7m" path="res://assets/mainGame/closet/buttons/0-down.png" id="18_cnnru"]
+[ext_resource type="Texture2D" uid="uid://pqpsmlmalvcy" path="res://assets/mainGame/closet/clothes/0A.png" id="22_xjt7e"]
+[ext_resource type="Texture2D" uid="uid://btajdha1uanq3" path="res://assets/mainGame/closet/clothes/0B.png" id="23_0xo8l"]
+[ext_resource type="Texture2D" uid="uid://cxgmonemijkbe" path="res://assets/mainGame/closet/clothes/1A.png" id="24_xfyss"]
+[ext_resource type="Texture2D" uid="uid://cnmtd4ynqumd" path="res://assets/mainGame/closet/clothes/1B.png" id="25_3ngjr"]
+[ext_resource type="Texture2D" uid="uid://bgbuq4wgg5p8u" path="res://assets/mainGame/closet/clothes/2A.png" id="26_qilgh"]
+[ext_resource type="Texture2D" uid="uid://rtw7otsrm4nf" path="res://assets/mainGame/closet/clothes/2B.png" id="27_4qosj"]
+[ext_resource type="Texture2D" uid="uid://b4pa2mk4tpv5h" path="res://assets/mainGame/closet/clothes/3A.png" id="28_cjlbh"]
+[ext_resource type="Texture2D" uid="uid://csrju42psqe2w" path="res://assets/mainGame/closet/clothes/3B.png" id="29_kfelt"]
+[ext_resource type="Texture2D" uid="uid://d31ayyup3rei" path="res://assets/mainGame/closet/clothes/4A.png" id="30_ytlpd"]
+[ext_resource type="Texture2D" uid="uid://beq4p5wmf6pvv" path="res://assets/mainGame/closet/clothes/4B.png" id="31_2v765"]
+[ext_resource type="Texture2D" uid="uid://bfcc3xxhky2fy" path="res://assets/mainGame/closet/clothes/5A.png" id="32_b8fb0"]
+[ext_resource type="Texture2D" uid="uid://btbcfh17ubhlt" path="res://assets/mainGame/closet/clothes/5B.png" id="33_ma08v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_540hr"]
+atlas = ExtResource("4_hqns4")
+region = Rect2(2021.9075, 226.0218, 110.09277, 128.01732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ip5v"]
+atlas = ExtResource("18_cnnru")
+region = Rect2(2022, 226, 110, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5dlx"]
+atlas = ExtResource("18_540hr")
+region = Rect2(2022, 226, 110, 128)
+
+[node name="Game" type="Node2D" unique_id=1294315420]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=382115676]
+scale = Vector2(41, 41)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=503664624]
+texture = ExtResource("1_wtcfe")
+
+[node name="Person" type="Sprite2D" parent="Background" unique_id=630698845]
+texture = ExtResource("2_4d7sh")
+
+[node name="0a" type="Sprite2D" parent="Background/Person" unique_id=1631455014]
+texture = ExtResource("3_kq1c5")
+
+[node name="0b" type="Sprite2D" parent="Background/Person" unique_id=1728029814]
+texture = ExtResource("4_ornx7")
+
+[node name="1a" type="Sprite2D" parent="Background/Person" unique_id=1152915655]
+texture = ExtResource("5_cnnru")
+
+[node name="1b" type="Sprite2D" parent="Background/Person" unique_id=1257798822]
+texture = ExtResource("6_540hr")
+
+[node name="2a" type="Sprite2D" parent="Background/Person" unique_id=355589043]
+texture = ExtResource("7_6ip5v")
+
+[node name="2b" type="Sprite2D" parent="Background/Person" unique_id=1492878747]
+texture = ExtResource("8_q5dlx")
+
+[node name="3a" type="Sprite2D" parent="Background/Person" unique_id=1086824453]
+texture = ExtResource("9_c4wnb")
+
+[node name="3b" type="Sprite2D" parent="Background/Person" unique_id=929542680]
+texture = ExtResource("10_7plk7")
+
+[node name="4a" type="Sprite2D" parent="Background/Person" unique_id=1458854661]
+texture = ExtResource("11_fbwgr")
+
+[node name="4b" type="Sprite2D" parent="Background/Person" unique_id=510241185]
+texture = ExtResource("12_7mj2a")
+
+[node name="5a" type="Sprite2D" parent="Background/Person" unique_id=606273682]
+texture = ExtResource("13_fshgd")
+
+[node name="5b" type="Sprite2D" parent="Background/Person" unique_id=1807616559]
+texture = ExtResource("14_lbrxf")
+
+[node name="Closet" type="Sprite2D" parent="Background" unique_id=434453131]
+texture = ExtResource("3_ir8iy")
+
+[node name="buttons" type="Sprite2D" parent="Background/Closet" unique_id=999066232]
+
+[node name="0" type="TextureButton" parent="Background/Closet/buttons" unique_id=1910393371]
+anchors_preset = -1
+offset_left = 838.0
+offset_top = -587.0
+offset_right = 948.0
+offset_bottom = -459.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_540hr")
+texture_pressed = SubResource("AtlasTexture_6ip5v")
+texture_hover = SubResource("AtlasTexture_q5dlx")
+
+[node name="1" type="Sprite2D" parent="Background/Closet/buttons" unique_id=1301893551]
+texture = ExtResource("5_x0ka3")
+
+[node name="2" type="Sprite2D" parent="Background/Closet/buttons" unique_id=729154800]
+texture = ExtResource("6_0h7mo")
+
+[node name="3" type="Sprite2D" parent="Background/Closet/buttons" unique_id=1167755698]
+texture = ExtResource("7_nr8wp")
+
+[node name="4" type="Sprite2D" parent="Background/Closet/buttons" unique_id=850077092]
+texture = ExtResource("8_d2bti")
+
+[node name="5" type="Sprite2D" parent="Background/Closet/buttons" unique_id=184818826]
+texture = ExtResource("9_ta5nu")
+
+[node name="clothes" type="Sprite2D" parent="Background/Closet" unique_id=51970904]
+
+[node name="0a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=769949259]
+texture = ExtResource("22_xjt7e")
+
+[node name="0b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=919662782]
+texture = ExtResource("23_0xo8l")
+
+[node name="1a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=333731916]
+texture = ExtResource("24_xfyss")
+
+[node name="1b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1468615371]
+texture = ExtResource("25_3ngjr")
+
+[node name="2a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=273495124]
+texture = ExtResource("26_qilgh")
+
+[node name="2b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=124786155]
+texture = ExtResource("27_4qosj")
+
+[node name="3a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=380419547]
+texture = ExtResource("28_cjlbh")
+
+[node name="3b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1526748349]
+position = Vector2(1, 0)
+texture = ExtResource("29_kfelt")
+
+[node name="4a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1343942043]
+texture = ExtResource("30_ytlpd")
+
+[node name="4b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1391533841]
+texture = ExtResource("31_2v765")
+
+[node name="5a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=77503642]
+texture = ExtResource("32_b8fb0")
+
+[node name="5b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1725414143]
+texture = ExtResource("33_ma08v")

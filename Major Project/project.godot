@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="试运行"
+run/main_scene="uid://wb8xtcc7uvtf"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1180
+window/size/viewport_height=820
+mouse_cursor/custom_image="uid://wmlpb45uplnf"
+
+[gui]
+
+common/snap_controls_to_pixels=false
+
+[input]
+
+"鼠标左键"={
+"deadzone": 0.2,
+"events": []
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
