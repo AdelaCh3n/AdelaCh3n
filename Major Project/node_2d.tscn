@@ -4,27 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://yy4mc4gpw7h" path="res://assets/mainGame/person.png" id="2_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://cysof3skqgl7e" path="res://assets/mainGame/closet.png" id="3_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://mufo6d2t8cwm" path="res://assets/mainGame/wearing/0A.png" id="3_kq1c5"]
-[ext_resource type="Texture2D" uid="uid://dbdsmbkwobjce" path="res://assets/mainGame/closet/buttons/0.png" id="4_hqns4"]
 [ext_resource type="Texture2D" uid="uid://6u40qrn7d61h" path="res://assets/mainGame/wearing/0B.png" id="4_ornx7"]
 [ext_resource type="Texture2D" uid="uid://dpvcqijqx8r7v" path="res://assets/mainGame/wearing/1A.png" id="5_cnnru"]
-[ext_resource type="Texture2D" uid="uid://dcsc4oqnpsxwr" path="res://assets/mainGame/closet/buttons/1.png" id="5_x0ka3"]
-[ext_resource type="Texture2D" uid="uid://d4mnlsb5q5ime" path="res://assets/mainGame/closet/buttons/2.png" id="6_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://hkguti01hpaq" path="res://assets/mainGame/wearing/1B.png" id="6_540hr"]
 [ext_resource type="Texture2D" uid="uid://fdjw7coqxv71" path="res://assets/mainGame/wearing/2A.png" id="7_6ip5v"]
-[ext_resource type="Texture2D" uid="uid://cq0lcq2eet5nc" path="res://assets/mainGame/closet/buttons/3.png" id="7_nr8wp"]
-[ext_resource type="Texture2D" uid="uid://bsw71bnsanyk0" path="res://assets/mainGame/closet/buttons/4.png" id="8_d2bti"]
 [ext_resource type="Texture2D" uid="uid://yhm3tmy5wjqj" path="res://assets/mainGame/wearing/2B.png" id="8_q5dlx"]
 [ext_resource type="Texture2D" uid="uid://dnepafpnc4kho" path="res://assets/mainGame/wearing/3A.png" id="9_c4wnb"]
-[ext_resource type="Texture2D" uid="uid://cwlet4iyti2fv" path="res://assets/mainGame/closet/buttons/5.png" id="9_ta5nu"]
 [ext_resource type="Texture2D" uid="uid://b5vvwv5kdcg5e" path="res://assets/mainGame/wearing/3B.png" id="10_7plk7"]
 [ext_resource type="Texture2D" uid="uid://npjvpi2m01in" path="res://assets/mainGame/wearing/4A.png" id="11_fbwgr"]
 [ext_resource type="Texture2D" uid="uid://b6om0hpbcltn0" path="res://assets/mainGame/wearing/4B.png" id="12_7mj2a"]
 [ext_resource type="Texture2D" uid="uid://bh6dloc302326" path="res://assets/mainGame/wearing/5A.png" id="13_fshgd"]
 [ext_resource type="Texture2D" uid="uid://lqi0mg8imbky" path="res://assets/mainGame/wearing/5B.png" id="14_lbrxf"]
-[ext_resource type="Texture2D" uid="uid://dtm77e4h120vc" path="res://assets/mainGame/closet/buttons/0-on.png" id="18_540hr"]
-[ext_resource type="Texture2D" uid="uid://dm11vev4jwo7m" path="res://assets/mainGame/closet/buttons/0-down.png" id="18_cnnru"]
+[ext_resource type="Script" uid="uid://cxwpjdjkbtlbl" path="res://closet.gd" id="15_ebxd8"]
+[ext_resource type="Texture2D" uid="uid://dpf0mc0qm5m4j" path="res://assets/mainGame/closet/buttons/buttonSheet.png" id="16_mryly"]
 [ext_resource type="Texture2D" uid="uid://pqpsmlmalvcy" path="res://assets/mainGame/closet/clothes/0A.png" id="22_xjt7e"]
 [ext_resource type="Texture2D" uid="uid://btajdha1uanq3" path="res://assets/mainGame/closet/clothes/0B.png" id="23_0xo8l"]
+[ext_resource type="Script" uid="uid://dqu1v7l0yvmps" path="res://clothes.gd" id="23_cnnru"]
 [ext_resource type="Texture2D" uid="uid://cxgmonemijkbe" path="res://assets/mainGame/closet/clothes/1A.png" id="24_xfyss"]
 [ext_resource type="Texture2D" uid="uid://cnmtd4ynqumd" path="res://assets/mainGame/closet/clothes/1B.png" id="25_3ngjr"]
 [ext_resource type="Texture2D" uid="uid://bgbuq4wgg5p8u" path="res://assets/mainGame/closet/clothes/2A.png" id="26_qilgh"]
@@ -36,17 +31,77 @@
 [ext_resource type="Texture2D" uid="uid://bfcc3xxhky2fy" path="res://assets/mainGame/closet/clothes/5A.png" id="32_b8fb0"]
 [ext_resource type="Texture2D" uid="uid://btbcfh17ubhlt" path="res://assets/mainGame/closet/clothes/5B.png" id="33_ma08v"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hxjc"]
+atlas = ExtResource("16_mryly")
+region = Rect2(1854, 226, 110, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebxd8"]
+atlas = ExtResource("16_mryly")
+region = Rect2(2022, 226, 110, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u7jv"]
+atlas = ExtResource("16_mryly")
+region = Rect2(1688, 226, 110, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24dk6"]
+atlas = ExtResource("16_mryly")
+region = Rect2(1849, 426, 110, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mryly"]
+atlas = ExtResource("16_mryly")
+region = Rect2(2024, 426, 110, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq1c5"]
+atlas = ExtResource("16_mryly")
+region = Rect2(1684, 426, 110, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ornx7"]
+atlas = ExtResource("16_mryly")
+region = Rect2(1853, 654, 109, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnnru"]
+atlas = ExtResource("16_mryly")
+region = Rect2(2012, 654, 109, 129)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_540hr"]
-atlas = ExtResource("4_hqns4")
-region = Rect2(2021.9075, 226.0218, 110.09277, 128.01732)
+atlas = ExtResource("16_mryly")
+region = Rect2(1687, 654, 109, 129)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ip5v"]
-atlas = ExtResource("18_cnnru")
-region = Rect2(2022, 226, 110, 128)
+atlas = ExtResource("16_mryly")
+region = Rect2(1855, 854, 109, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q5dlx"]
-atlas = ExtResource("18_540hr")
-region = Rect2(2022, 226, 110, 128)
+atlas = ExtResource("16_mryly")
+region = Rect2(2014, 854, 109, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4wnb"]
+atlas = ExtResource("16_mryly")
+region = Rect2(1689, 854, 109, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7plk7"]
+atlas = ExtResource("16_mryly")
+region = Rect2(1854, 1069, 109, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbwgr"]
+atlas = ExtResource("16_mryly")
+region = Rect2(2013, 1069, 109, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mj2a"]
+atlas = ExtResource("16_mryly")
+region = Rect2(1688, 1069, 109, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fshgd"]
+atlas = ExtResource("16_mryly")
+region = Rect2(1856, 1269, 110, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbrxf"]
+atlas = ExtResource("16_mryly")
+region = Rect2(2015, 1269, 110, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjt7e"]
+atlas = ExtResource("16_mryly")
+region = Rect2(1690, 1269, 110, 128)
 
 [node name="Game" type="Node2D" unique_id=1294315420]
 
@@ -96,73 +151,124 @@ texture = ExtResource("13_fshgd")
 [node name="5b" type="Sprite2D" parent="Background/Person" unique_id=1807616559]
 texture = ExtResource("14_lbrxf")
 
-[node name="Closet" type="Sprite2D" parent="Background" unique_id=434453131]
+[node name="Closet" type="Sprite2D" parent="Background" unique_id=832237030]
 texture = ExtResource("3_ir8iy")
+script = ExtResource("15_ebxd8")
 
-[node name="buttons" type="Sprite2D" parent="Background/Closet" unique_id=999066232]
+[node name="buttons" type="Node2D" parent="Background/Closet" unique_id=705177747]
 
 [node name="0" type="TextureButton" parent="Background/Closet/buttons" unique_id=1910393371]
 anchors_preset = -1
-offset_left = 838.0
-offset_top = -587.0
-offset_right = 948.0
-offset_bottom = -459.0
+offset_left = 844.0
+offset_top = -568.0
+offset_right = 954.0
+offset_bottom = -440.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_540hr")
-texture_pressed = SubResource("AtlasTexture_6ip5v")
-texture_hover = SubResource("AtlasTexture_q5dlx")
+texture_normal = SubResource("AtlasTexture_2hxjc")
+texture_pressed = SubResource("AtlasTexture_ebxd8")
+texture_hover = SubResource("AtlasTexture_2u7jv")
 
-[node name="1" type="Sprite2D" parent="Background/Closet/buttons" unique_id=1301893551]
-texture = ExtResource("5_x0ka3")
+[node name="1" type="TextureButton" parent="Background/Closet/buttons" unique_id=403673376]
+offset_left = 837.0
+offset_top = -375.0
+offset_right = 947.0
+offset_bottom = -247.0
+texture_normal = SubResource("AtlasTexture_24dk6")
+texture_pressed = SubResource("AtlasTexture_mryly")
+texture_hover = SubResource("AtlasTexture_kq1c5")
 
-[node name="2" type="Sprite2D" parent="Background/Closet/buttons" unique_id=729154800]
-texture = ExtResource("6_0h7mo")
+[node name="2" type="TextureButton" parent="Background/Closet/buttons" unique_id=2126686347]
+offset_left = 834.0
+offset_top = -175.0
+offset_right = 943.0
+offset_bottom = -46.0
+texture_normal = SubResource("AtlasTexture_ornx7")
+texture_pressed = SubResource("AtlasTexture_cnnru")
+texture_hover = SubResource("AtlasTexture_540hr")
 
-[node name="3" type="Sprite2D" parent="Background/Closet/buttons" unique_id=1167755698]
-texture = ExtResource("7_nr8wp")
+[node name="3" type="TextureButton" parent="Background/Closet/buttons" unique_id=1950304763]
+offset_left = 836.0
+offset_top = 17.0
+offset_right = 945.0
+offset_bottom = 145.0
+texture_normal = SubResource("AtlasTexture_6ip5v")
+texture_pressed = SubResource("AtlasTexture_q5dlx")
+texture_hover = SubResource("AtlasTexture_c4wnb")
 
-[node name="4" type="Sprite2D" parent="Background/Closet/buttons" unique_id=850077092]
-texture = ExtResource("8_d2bti")
+[node name="4" type="TextureButton" parent="Background/Closet/buttons" unique_id=333541333]
+offset_left = 835.0
+offset_top = 229.0
+offset_right = 944.0
+offset_bottom = 358.0
+texture_normal = SubResource("AtlasTexture_7plk7")
+texture_pressed = SubResource("AtlasTexture_fbwgr")
+texture_hover = SubResource("AtlasTexture_7mj2a")
 
-[node name="5" type="Sprite2D" parent="Background/Closet/buttons" unique_id=184818826]
-texture = ExtResource("9_ta5nu")
+[node name="5" type="TextureButton" parent="Background/Closet/buttons" unique_id=1636098788]
+offset_left = 839.0
+offset_top = 432.0
+offset_right = 949.0
+offset_bottom = 560.0
+texture_normal = SubResource("AtlasTexture_fshgd")
+texture_pressed = SubResource("AtlasTexture_lbrxf")
+texture_hover = SubResource("AtlasTexture_xjt7e")
 
-[node name="clothes" type="Sprite2D" parent="Background/Closet" unique_id=51970904]
+[node name="clothes" type="Node2D" parent="Background/Closet" unique_id=2146520325]
+script = ExtResource("23_cnnru")
 
-[node name="0a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=769949259]
+[node name="0" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1981694596]
+
+[node name="0a" type="Sprite2D" parent="Background/Closet/clothes/0" unique_id=769949259]
 texture = ExtResource("22_xjt7e")
 
-[node name="0b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=919662782]
+[node name="0b" type="Sprite2D" parent="Background/Closet/clothes/0" unique_id=919662782]
 texture = ExtResource("23_0xo8l")
 
-[node name="1a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=333731916]
+[node name="1" type="Sprite2D" parent="Background/Closet/clothes" unique_id=478837316]
+
+[node name="1a" type="Sprite2D" parent="Background/Closet/clothes/1" unique_id=333731916]
 texture = ExtResource("24_xfyss")
 
-[node name="1b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1468615371]
+[node name="1b" type="Sprite2D" parent="Background/Closet/clothes/1" unique_id=1468615371]
 texture = ExtResource("25_3ngjr")
 
-[node name="2a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=273495124]
+[node name="2" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1295038629]
+
+[node name="2a" type="Sprite2D" parent="Background/Closet/clothes/2" unique_id=273495124]
 texture = ExtResource("26_qilgh")
 
-[node name="2b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=124786155]
+[node name="2b" type="Sprite2D" parent="Background/Closet/clothes/2" unique_id=124786155]
 texture = ExtResource("27_4qosj")
 
-[node name="3a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=380419547]
+[node name="3" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1037622248]
+
+[node name="3a" type="Sprite2D" parent="Background/Closet/clothes/3" unique_id=380419547]
 texture = ExtResource("28_cjlbh")
 
-[node name="3b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1526748349]
+[node name="3b" type="Sprite2D" parent="Background/Closet/clothes/3" unique_id=1526748349]
 position = Vector2(1, 0)
 texture = ExtResource("29_kfelt")
 
-[node name="4a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1343942043]
+[node name="4" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1949587150]
+
+[node name="4a" type="Sprite2D" parent="Background/Closet/clothes/4" unique_id=1343942043]
 texture = ExtResource("30_ytlpd")
 
-[node name="4b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1391533841]
+[node name="4b" type="Sprite2D" parent="Background/Closet/clothes/4" unique_id=1391533841]
 texture = ExtResource("31_2v765")
 
-[node name="5a" type="Sprite2D" parent="Background/Closet/clothes" unique_id=77503642]
+[node name="5" type="Sprite2D" parent="Background/Closet/clothes" unique_id=333779370]
+
+[node name="5a" type="Sprite2D" parent="Background/Closet/clothes/5" unique_id=77503642]
 texture = ExtResource("32_b8fb0")
 
-[node name="5b" type="Sprite2D" parent="Background/Closet/clothes" unique_id=1725414143]
+[node name="5b" type="Sprite2D" parent="Background/Closet/clothes/5" unique_id=1725414143]
 texture = ExtResource("33_ma08v")
+
+[connection signal="pressed" from="Background/Closet/buttons/0" to="Background/Closet" method="_on_0_pressed"]
+[connection signal="pressed" from="Background/Closet/buttons/1" to="Background/Closet" method="_on_1_pressed"]
+[connection signal="pressed" from="Background/Closet/buttons/2" to="Background/Closet" method="_on_2_pressed"]
+[connection signal="pressed" from="Background/Closet/buttons/3" to="Background/Closet" method="_on_3_pressed"]
+[connection signal="pressed" from="Background/Closet/buttons/4" to="Background/Closet" method="_on_4_pressed"]
+[connection signal="pressed" from="Background/Closet/buttons/5" to="Background/Closet" method="_on_5_pressed"]
