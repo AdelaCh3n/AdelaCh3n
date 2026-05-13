@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="试运行"
-run/main_scene="uid://wb8xtcc7uvtf"
+config/name="Major Project"
+run/main_scene="uid://btoy3cpdmatkj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Transition="*uid://c3vallog5og1o"
 
 [display]
 

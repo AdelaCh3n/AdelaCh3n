@@ -5,31 +5,26 @@ extends Node2D
 
 @onready var hair = $"../Person/hair"
 @onready var tops = $"../Person/tops"
-@onready var buttoms = $"../Person/bottoms"
+@onready var bottoms = $"../Person/bottoms"
 @onready var dresses = $"../Person/dresses"
 @onready var socks = $"../Person/socks"
 @onready var shoes = $"../Person/shoes"
 
 func _ready():
-	hide_all()
-	no_wear()
-	print(hair)
-	print(tops)
-	print(buttoms)
-	print(dresses)
-	print(socks)
-	print(shoes)
+	hide_closet()
+	hide_wearing()
 	
-func hide_all():
+	
+func hide_closet(): #hide all the clothes(in closet) before started
 	for c in clothes.get_children():
 		c.visible = false
 
-func no_wear():
+func hide_wearing():#hide all the clothes(wearing) before started
 	for h in hair.get_children():
 		h.visible = false
 	for t in tops.get_children():
 		t.visible = false
-	for b in buttoms.get_children():
+	for b in bottoms.get_children():
 		b.visible = false
 	for d in dresses.get_children():
 		d.visible = false
@@ -39,7 +34,7 @@ func no_wear():
 		sh.visible = false
 		
 
-func show_clothes(index):
+func show_clothes(index):#show clothes from the index
 	for i in range(clothes.get_child_count()):
 		var c = clothes.get_child(i)
 		c.visible = (i == index)
@@ -50,16 +45,20 @@ func wear_hair(index):
 		h.visible = (i == index)
 
 func wear_top(index):
+	hide_group(dresses)
 	for i in range(tops.get_child_count()):
 		var t = tops.get_child(i)
 		t.visible = (i == index)
 		
 func wear_bottoms(index):
-	for i in range(buttoms.get_child_count()):
-		var b = buttoms.get_child(i)
+	hide_group(dresses)
+	for i in range(bottoms.get_child_count()):
+		var b = bottoms.get_child(i)
 		b.visible = (i == index)
 		
 func wear_dresses(index):
+	hide_group(tops)
+	hide_group(bottoms)
 	for i in range(dresses.get_child_count()):
 		var d = dresses.get_child(i)
 		d.visible = (i == index)
@@ -74,6 +73,9 @@ func wear_shoes(index):
 		var sh = shoes.get_child(i)
 		sh.visible = (i == index)
 
+func hide_group(group):
+	for i in group.get_children():
+		i.visible = false
 
 func _on_0_pressed() -> void:
 	show_clothes(0);
@@ -99,4 +101,39 @@ func _on_0a_pressed() -> void:
 
 
 func _on_0b_pressed() -> void:
-	wear_hair(1);
+	wear_hair(1)
+
+
+func _on_1a_pressed() -> void:
+	wear_top(0);
+
+
+func _on_1b_pressed() -> void:
+	wear_top(1);
+
+
+func _on_2a_pressed() -> void:
+	wear_bottoms(0);
+
+
+func _on_2b_pressed() -> void:
+	wear_bottoms(1);
+
+
+func _on_3a_pressed() -> void:
+	wear_dresses(0);
+
+func _on_3b_pressed() -> void:
+	wear_dresses(1);
+
+func _on_4a_pressed() -> void:
+	wear_socks(0);
+
+func _on_4b_pressed() -> void:
+	wear_socks(1);
+	
+func _on_5a_pressed() -> void:
+	wear_shoes(0);
+
+func _on_5b_pressed() -> void:
+	wear_shoes(1);

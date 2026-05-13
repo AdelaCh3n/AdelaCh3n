@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://btoy3cpdmatkj"]
+
+[ext_resource type="Script" uid="uid://cq5q4l0rhnmhf" path="res://prototype/start_page.gd" id="1_ea24q"]
+[ext_resource type="Texture2D" uid="uid://bkt5arv7j5uua" path="res://assets/startPage/button sheet.PNG" id="1_urypa"]
+[ext_resource type="Texture2D" uid="uid://6t1y5k63d41t" path="res://assets/startPage/cover page.PNG" id="2_ea24q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ned2h"]
+atlas = ExtResource("1_urypa")
+region = Rect2(978, 965, 360, 344)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yieb"]
+atlas = ExtResource("1_urypa")
+region = Rect2(1418, 965, 360, 344)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa7sw"]
+atlas = ExtResource("1_urypa")
+region = Rect2(545, 965, 360, 344)
+
+[node name="Node2D" type="Control" unique_id=181508286]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ea24q")
+
+[node name="start_button" type="TextureButton" parent="." unique_id=150414380]
+z_index = 1
+layout_mode = 0
+offset_left = -196.0
+offset_top = 122.0
+offset_right = 164.0
+offset_bottom = 466.0
+texture_normal = SubResource("AtlasTexture_ned2h")
+texture_pressed = SubResource("AtlasTexture_0yieb")
+texture_hover = SubResource("AtlasTexture_fa7sw")
+
+[node name="background" type="Sprite2D" parent="." unique_id=430138611]
+z_index = -1
+texture = ExtResource("2_ea24q")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1649438859]
+zoom = Vector2(0.5, 0.5)
+
+[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
