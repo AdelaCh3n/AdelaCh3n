@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bh6dloc302326" path="res://assets/mainGame/wearing/5A.png" id="13_8ktx7"]
 [ext_resource type="Texture2D" uid="uid://lqi0mg8imbky" path="res://assets/mainGame/wearing/5B.png" id="14_hwsgv"]
 [ext_resource type="Texture2D" uid="uid://cysof3skqgl7e" path="res://assets/mainGame/closet.png" id="15_gebyw"]
-[ext_resource type="Script" uid="uid://cxwpjdjkbtlbl" path="res://closet.gd" id="16_4my3f"]
+[ext_resource type="Script" uid="uid://cxwpjdjkbtlbl" path="res://prototype/closet.gd" id="16_4my3f"]
 [ext_resource type="Texture2D" uid="uid://dpf0mc0qm5m4j" path="res://assets/mainGame/closet/buttons/buttonSheet.png" id="17_aeq37"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hxjc"]
