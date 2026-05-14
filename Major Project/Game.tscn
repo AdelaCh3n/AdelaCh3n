@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bh6dloc302326" path="res://assets/mainGame/wearing/5A.png" id="13_8ktx7"]
 [ext_resource type="Texture2D" uid="uid://lqi0mg8imbky" path="res://assets/mainGame/wearing/5B.png" id="14_hwsgv"]
 [ext_resource type="Texture2D" uid="uid://cysof3skqgl7e" path="res://assets/mainGame/closet.png" id="15_gebyw"]
-[ext_resource type="Script" uid="uid://cxwpjdjkbtlbl" path="res://prototype/closet.gd" id="16_4my3f"]
+[ext_resource type="Script" uid="uid://cxwpjdjkbtlbl" path="res://closet.gd" id="16_4my3f"]
 [ext_resource type="Texture2D" uid="uid://dpf0mc0qm5m4j" path="res://assets/mainGame/closet/buttons/buttonSheet.png" id="17_aeq37"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hxjc"]
@@ -265,6 +265,7 @@ region = Rect2(1637, 2804, 322, 195)
 [node name="Game" type="Node2D" unique_id=1294315420]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=382115676]
+z_index = 10
 scale = Vector2(41, 41)
 zoom = Vector2(0.5, 0.5)
 
@@ -277,19 +278,21 @@ texture = ExtResource("2_wuoie")
 [node name="hair" type="Node2D" parent="Person" unique_id=581756168]
 
 [node name="0a" type="Sprite2D" parent="Person/hair" unique_id=1728029814]
+z_index = 1
 texture = ExtResource("3_bvhbk")
 
 [node name="0b" type="Sprite2D" parent="Person/hair" unique_id=1631455014]
+z_index = 1
 texture = ExtResource("4_cpsxm")
 
 [node name="tops" type="Node2D" parent="Person" unique_id=493284634]
 
 [node name="1a" type="Sprite2D" parent="Person/tops" unique_id=1152915655]
-z_index = 1
+z_index = 2
 texture = ExtResource("5_hmewc")
 
 [node name="1b" type="Sprite2D" parent="Person/tops" unique_id=1257798822]
-z_index = 1
+z_index = 2
 texture = ExtResource("6_7ged1")
 
 [node name="bottoms" type="Node2D" parent="Person" unique_id=1721880488]
