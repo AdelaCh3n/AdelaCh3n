@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://wb8xtcc7uvtf"]
 
 [ext_resource type="Texture2D" uid="uid://cxhv6op06bhhc" path="res://assets/mainGame/background.png" id="1_0yprl"]
+[ext_resource type="Texture2D" uid="uid://wmlpb45uplnf" path="res://assets/mouse.png" id="1_bvhbk"]
+[ext_resource type="Texture2D" uid="uid://bkt5arv7j5uua" path="res://assets/startPage/button sheet.PNG" id="1_wuoie"]
 [ext_resource type="Texture2D" uid="uid://yy4mc4gpw7h" path="res://assets/mainGame/person.png" id="2_wuoie"]
 [ext_resource type="Texture2D" uid="uid://6u40qrn7d61h" path="res://assets/mainGame/wearing/0B.png" id="3_bvhbk"]
 [ext_resource type="Texture2D" uid="uid://mufo6d2t8cwm" path="res://assets/mainGame/wearing/0A.png" id="4_cpsxm"]
@@ -15,8 +17,20 @@
 [ext_resource type="Texture2D" uid="uid://bh6dloc302326" path="res://assets/mainGame/wearing/5A.png" id="13_8ktx7"]
 [ext_resource type="Texture2D" uid="uid://lqi0mg8imbky" path="res://assets/mainGame/wearing/5B.png" id="14_hwsgv"]
 [ext_resource type="Texture2D" uid="uid://cysof3skqgl7e" path="res://assets/mainGame/closet.png" id="15_gebyw"]
-[ext_resource type="Script" uid="uid://cxwpjdjkbtlbl" path="res://closet.gd" id="16_4my3f"]
+[ext_resource type="Script" uid="uid://cxwpjdjkbtlbl" path="res://prototype/closet.gd" id="16_4my3f"]
 [ext_resource type="Texture2D" uid="uid://dpf0mc0qm5m4j" path="res://assets/mainGame/closet/buttons/buttonSheet.png" id="17_aeq37"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvhbk"]
+atlas = ExtResource("1_wuoie")
+region = Rect2(978, 965, 360, 344)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpsxm"]
+atlas = ExtResource("1_wuoie")
+region = Rect2(1418, 965, 360, 344)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmewc"]
+atlas = ExtResource("1_wuoie")
+region = Rect2(545, 965, 360, 344)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hxjc"]
 atlas = ExtResource("17_aeq37")
@@ -264,12 +278,67 @@ region = Rect2(1637, 2804, 322, 195)
 
 [node name="Game" type="Node2D" unique_id=1294315420]
 
+[node name="CodeLabel" type="Label" parent="." unique_id=574204249]
+z_index = 6
+offset_left = 519.0
+offset_top = -739.0
+offset_right = 976.0
+offset_bottom = -518.0
+scale = Vector2(0.845, 0.845)
+theme_override_colors/font_outline_color = Color(0.7030655, 0.34392506, 0.24340644, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 46
+text = "current code"
+
+[node name="loadButton" type="TextureButton" parent="." unique_id=38413733]
+offset_left = 67.0
+offset_top = -745.0
+offset_right = 147.0
+offset_bottom = -665.0
+texture_normal = ExtResource("1_bvhbk")
+
+[node name="CodeInput" type="LineEdit" parent="." unique_id=1893093150]
+offset_left = -331.0
+offset_top = -752.0
+offset_right = 59.5
+offset_bottom = -671.0351
+theme_override_colors/font_color = Color(0.9335353, 0.85721993, 0.8241221, 1)
+theme_override_colors/font_outline_color = Color(0.78, 0.35047996, 0.3432, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 40
+placeholder_text = "enter code here"
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+flat = true
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=382115676]
 z_index = 10
 scale = Vector2(41, 41)
 zoom = Vector2(0.5, 0.5)
 
+[node name="random" type="TextureButton" parent="." unique_id=1918363632]
+z_index = 1
+offset_left = -504.99997
+offset_top = -756.0
+offset_right = -424.99997
+offset_bottom = -676.0
+scale = Vector2(2.83, 2.83)
+texture_normal = ExtResource("1_bvhbk")
+texture_pressed = ExtResource("1_bvhbk")
+texture_hover = ExtResource("1_bvhbk")
+
+[node name="reset" type="TextureButton" parent="." unique_id=925403773]
+z_index = 1
+offset_left = -1116.0
+offset_top = -773.0
+offset_right = -756.0
+offset_bottom = -429.0
+texture_normal = SubResource("AtlasTexture_bvhbk")
+texture_pressed = SubResource("AtlasTexture_cpsxm")
+texture_hover = SubResource("AtlasTexture_hmewc")
+
 [node name="Background" type="Sprite2D" parent="." unique_id=503664624]
+z_index = -1
 texture = ExtResource("1_0yprl")
 
 [node name="Person" type="Sprite2D" parent="." unique_id=630698845]
@@ -528,6 +597,9 @@ texture_pressed = SubResource("AtlasTexture_t3mf0")
 texture_hover = SubResource("AtlasTexture_kejda")
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="loadButton" to="Closet" method="_on_load_button_pressed"]
+[connection signal="pressed" from="random" to="Closet" method="_on_random_pressed"]
+[connection signal="pressed" from="reset" to="Closet" method="_on_reset_pressed"]
 [connection signal="pressed" from="Closet/buttons/0" to="Closet" method="_on_0_pressed"]
 [connection signal="pressed" from="Closet/buttons/1" to="Closet" method="_on_1_pressed"]
 [connection signal="pressed" from="Closet/buttons/2" to="Closet" method="_on_2_pressed"]
