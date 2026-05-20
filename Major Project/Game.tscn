@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://wb8xtcc7uvtf"]
 
 [ext_resource type="Texture2D" uid="uid://cxhv6op06bhhc" path="res://assets/mainGame/background.png" id="1_0yprl"]
-[ext_resource type="Texture2D" uid="uid://wmlpb45uplnf" path="res://assets/mouse.png" id="1_bvhbk"]
-[ext_resource type="Texture2D" uid="uid://bkt5arv7j5uua" path="res://assets/startPage/button sheet.PNG" id="1_wuoie"]
+[ext_resource type="Texture2D" uid="uid://cai36m2rq873o" path="res://assets/mainGame/closet/buttons/buttonsheet2.PNG" id="1_bvhbk"]
 [ext_resource type="Texture2D" uid="uid://yy4mc4gpw7h" path="res://assets/mainGame/person.png" id="2_wuoie"]
 [ext_resource type="Texture2D" uid="uid://6u40qrn7d61h" path="res://assets/mainGame/wearing/0B.png" id="3_bvhbk"]
+[ext_resource type="Texture2D" uid="uid://dr4gg8mv1ugcp" path="res://assets/mainGame/closet/buttons/code.PNG" id="3_cpsxm"]
 [ext_resource type="Texture2D" uid="uid://mufo6d2t8cwm" path="res://assets/mainGame/wearing/0A.png" id="4_cpsxm"]
 [ext_resource type="Texture2D" uid="uid://dpvcqijqx8r7v" path="res://assets/mainGame/wearing/1A.png" id="5_hmewc"]
 [ext_resource type="Texture2D" uid="uid://hkguti01hpaq" path="res://assets/mainGame/wearing/1B.png" id="6_7ged1"]
@@ -20,17 +20,68 @@
 [ext_resource type="Script" uid="uid://cxwpjdjkbtlbl" path="res://prototype/closet.gd" id="16_4my3f"]
 [ext_resource type="Texture2D" uid="uid://dpf0mc0qm5m4j" path="res://assets/mainGame/closet/buttons/buttonSheet.png" id="17_aeq37"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvhbk"]
-atlas = ExtResource("1_wuoie")
-region = Rect2(978, 965, 360, 344)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpsxm"]
-atlas = ExtResource("1_wuoie")
-region = Rect2(1418, 965, 360, 344)
+atlas = ExtResource("1_bvhbk")
+region = Rect2(158, 1258, 115, 114)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmewc"]
-atlas = ExtResource("1_wuoie")
-region = Rect2(545, 965, 360, 344)
+atlas = ExtResource("1_bvhbk")
+region = Rect2(158, 1412, 115, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsoai"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(158, 1075, 115, 114)
+
+[sub_resource type="FontVariation" id="FontVariation_bvhbk"]
+variation_embolden = -0.26
+variation_transform = Transform2D(1, 0.015, 0.045, 1, 0, 0)
+spacing_glyph = 12
+spacing_top = -4
+spacing_bottom = -5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ged1"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(1278, 210, 191, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mevm"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(1278, 349, 191, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2501"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(1278, 67, 191, 78)
+
+[sub_resource type="FontVariation" id="FontVariation_jsoai"]
+variation_embolden = -0.1
+variation_transform = Transform2D(1.265, 0.05, -0.015, 1.11, 0, 0)
+spacing_glyph = 22
+spacing_space = -4
+spacing_top = -15
+spacing_bottom = -15
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bisgb"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(330, 248, 129, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5ctq"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(330, 387, 129, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7ht3"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(330, 105, 129, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvhbk"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(152, 251, 123, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ktx7"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(152, 390, 123, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwsgv"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(152, 108, 123, 117)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hxjc"]
 atlas = ExtResource("17_aeq37")
@@ -278,36 +329,54 @@ region = Rect2(1637, 2804, 322, 195)
 
 [node name="Game" type="Node2D" unique_id=1294315420]
 
+[node name="home" type="TextureButton" parent="." unique_id=1561170444]
+z_index = 1
+offset_left = -1003.0
+offset_top = 471.0
+offset_right = -888.0
+offset_bottom = 585.0
+texture_normal = SubResource("AtlasTexture_cpsxm")
+texture_pressed = SubResource("AtlasTexture_hmewc")
+texture_hover = SubResource("AtlasTexture_jsoai")
+
 [node name="CodeLabel" type="Label" parent="." unique_id=574204249]
 z_index = 6
-offset_left = 519.0
-offset_top = -739.0
-offset_right = 976.0
-offset_bottom = -518.0
-scale = Vector2(0.845, 0.845)
-theme_override_colors/font_outline_color = Color(0.7030655, 0.34392506, 0.24340644, 1)
-theme_override_constants/outline_size = 25
-theme_override_font_sizes/font_size = 46
-text = "current code"
+offset_left = 745.0
+offset_top = -753.0
+offset_right = 1006.0
+offset_bottom = -690.0
+theme_override_colors/font_color = Color(0.48235294, 0.26666668, 0.2627451, 1)
+theme_override_fonts/font = SubResource("FontVariation_bvhbk")
+theme_override_font_sizes/font_size = 52
+text = "eeeeee"
+horizontal_alignment = 1
 
 [node name="loadButton" type="TextureButton" parent="." unique_id=38413733]
-offset_left = 67.0
-offset_top = -745.0
-offset_right = 147.0
-offset_bottom = -665.0
-texture_normal = ExtResource("1_bvhbk")
+offset_left = 68.0
+offset_top = -748.0
+offset_right = 259.0
+offset_bottom = -668.0
+texture_normal = SubResource("AtlasTexture_7ged1")
+texture_pressed = SubResource("AtlasTexture_0mevm")
+texture_hover = SubResource("AtlasTexture_w2501")
 
 [node name="CodeInput" type="LineEdit" parent="." unique_id=1893093150]
-offset_left = -331.0
-offset_top = -752.0
-offset_right = 59.5
-offset_bottom = -671.0351
-theme_override_colors/font_color = Color(0.9335353, 0.85721993, 0.8241221, 1)
+z_index = 1
+offset_left = -177.0
+offset_top = -735.0
+offset_right = 149.0
+offset_bottom = -680.0
+scale = Vector2(0.74, 0.855)
+theme_override_colors/font_color = Color(0.48235294, 0.26666668, 0.2627451, 1)
 theme_override_colors/font_outline_color = Color(0.78, 0.35047996, 0.3432, 1)
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 40
-placeholder_text = "enter code here"
+theme_override_constants/minimum_character_width = 6
+theme_override_fonts/font = SubResource("FontVariation_jsoai")
+theme_override_font_sizes/font_size = 56
+text = "000000"
+max_length = 6
+context_menu_enabled = false
 emoji_menu_enabled = false
+backspace_deletes_composite_character_enabled = true
 shortcut_keys_enabled = false
 flat = true
 
@@ -318,28 +387,30 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="random" type="TextureButton" parent="." unique_id=1918363632]
 z_index = 1
-offset_left = -504.99997
-offset_top = -756.0
-offset_right = -424.99997
-offset_bottom = -676.0
-scale = Vector2(2.83, 2.83)
-texture_normal = ExtResource("1_bvhbk")
-texture_pressed = ExtResource("1_bvhbk")
-texture_hover = ExtResource("1_bvhbk")
+offset_left = -861.0
+offset_top = -713.0
+offset_right = -732.0
+offset_bottom = -592.0
+texture_normal = SubResource("AtlasTexture_bisgb")
+texture_pressed = SubResource("AtlasTexture_y5ctq")
+texture_hover = SubResource("AtlasTexture_w7ht3")
 
 [node name="reset" type="TextureButton" parent="." unique_id=925403773]
 z_index = 1
-offset_left = -1116.0
-offset_top = -773.0
-offset_right = -756.0
-offset_bottom = -429.0
+offset_left = -1017.0
+offset_top = -712.0
+offset_right = -894.0
+offset_bottom = -595.0
 texture_normal = SubResource("AtlasTexture_bvhbk")
-texture_pressed = SubResource("AtlasTexture_cpsxm")
-texture_hover = SubResource("AtlasTexture_hmewc")
+texture_pressed = SubResource("AtlasTexture_8ktx7")
+texture_hover = SubResource("AtlasTexture_hwsgv")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=503664624]
 z_index = -1
 texture = ExtResource("1_0yprl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1247776906]
+texture = ExtResource("3_cpsxm")
 
 [node name="Person" type="Sprite2D" parent="." unique_id=630698845]
 texture = ExtResource("2_wuoie")
@@ -597,6 +668,7 @@ texture_pressed = SubResource("AtlasTexture_t3mf0")
 texture_hover = SubResource("AtlasTexture_kejda")
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="home" to="Closet" method="_on_home_pressed"]
 [connection signal="pressed" from="loadButton" to="Closet" method="_on_load_button_pressed"]
 [connection signal="pressed" from="random" to="Closet" method="_on_random_pressed"]
 [connection signal="pressed" from="reset" to="Closet" method="_on_reset_pressed"]

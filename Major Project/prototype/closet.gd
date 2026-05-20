@@ -1,5 +1,6 @@
 extends Node2D
 
+var StartPage = "res://start_page.tscn"
 
 @onready var clothes = $clothes
 @onready var code_input = $"../CodeInput"
@@ -21,6 +22,14 @@ var current_dresses = -1
 var current_socks = -1
 var current_shoes = -1
 
+var random_c = randi_range(-1,1)
+
+var hair_total = 1;
+var tops_total = 1;
+var bottoms_total = 1;
+var dresses_total = 1;
+var socks_total = 1;
+var shoes_total = 1;
 
 
 func _ready():
@@ -64,14 +73,13 @@ func update_code():
 func load_code(code):
 	
 	wear_hair(e_code(code[0]),false)
-	wear_dresses(e_code(code[3]),false)
 	wear_top(e_code(code[1]),false)
 	wear_bottoms(e_code(code[2]),false)
-	
+	wear_dresses(e_code(code[3]),false)
 	wear_socks(e_code(code[4]),false)
 	wear_shoes(e_code(code[5]),false)
 	
-func e_code(index): #enter e means "not wearing"
+func e_code(index): #e means "not wearing"
 	if index == "e":
 		return -1
 	return int(index)
@@ -82,12 +90,31 @@ func index_to_code(index):
 		
 	return str(index)
 
+func random_code():
+	current_hair = randi_range(-1,hair_total)
+	current_socks = randi_range(-1,socks_total)
+	current_shoes = randi_range(-1,shoes_total)
+	var wear_seperate = randi_range(0,1)
+	if wear_seperate == 1:
+		current_dresses = -1
+		hide_group(dresses)
+		current_tops = randi_range(0,tops_total)
+		current_bottoms = randi_range(0,bottoms_total)
+	else:
+		current_tops = -1
+		current_bottoms = -1
+		current_dresses = randi_range(0,dresses_total)
+
+	hide_wearing()
+	load_code(generate_code())
+
 
 func show_clothes(index):#show clothes from the index
 	for i in range(clothes.get_child_count()):
 		var c = clothes.get_child(i)
 		c.visible = (i == index)
-		
+
+
 func wear_hair(index, toggle = true):
 	if toggle==true and current_hair == index:#click again to unwear
 		current_hair = -1
@@ -127,8 +154,15 @@ func wear_bottoms(index, toggle = true):
 		var b = bottoms.get_child(i)
 		b.visible = (i == index)
 	update_code()
+	
 		
 func wear_dresses(index, toggle = true):
+	if index == -1: 
+		current_dresses = -1
+		for d in dresses.get_children():
+			d.visible = false
+		return
+	show_group(dresses)
 	hide_group(tops)
 	hide_group(bottoms)
 	current_bottoms = -1
@@ -172,6 +206,11 @@ func hide_group(group):
 	for i in group.get_children():
 		i.visible = false
 
+func show_group(group):
+	for i in group.get_children():
+		i.visible = true
+
+#closet button pressed
 func _on_0_pressed() -> void:
 	show_clothes(0);
 
@@ -190,7 +229,7 @@ func _on_4_pressed() -> void:
 func _on_5_pressed() -> void:
 	show_clothes(5);
 
-
+#clothes pressed
 func _on_0a_pressed() -> void:
 	wear_hair(0);
 	update_code()
@@ -239,7 +278,7 @@ func _on_5b_pressed() -> void:
 	wear_shoes(1);
 	update_code()
 
-
+#ui
 func _on_reset_pressed() -> void:
 	wear_hair(-1);
 	wear_top(-1);
@@ -249,9 +288,11 @@ func _on_reset_pressed() -> void:
 	wear_shoes(-1);	
 
 func _on_random_pressed() -> void:
-	pass # Replace with function body.
-	
+	random_code()
 
 func _on_load_button_pressed() -> void:
 	var code = code_input.text 
 	load_code(code)
+
+func _on_home_pressed() -> void:
+	Transition.change_scene(StartPage)
