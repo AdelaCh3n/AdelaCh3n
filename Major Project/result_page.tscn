@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://cm33xuke53lsn"]
+
+[ext_resource type="Texture2D" uid="uid://cildbjxm3m4jn" path="res://assets/resultPage/background.PNG" id="1_1ikw5"]
+[ext_resource type="Script" uid="uid://bn3nyfe1xx28g" path="res://result_page.gd" id="1_q6nne"]
+[ext_resource type="Texture2D" uid="uid://bw6lvhr7aihci" path="res://assets/resultPage/shining.PNG" id="2_p8erj"]
+[ext_resource type="Texture2D" uid="uid://yy4mc4gpw7h" path="res://assets/mainGame/person.png" id="3_q6nne"]
+[ext_resource type="Texture2D" uid="uid://6u40qrn7d61h" path="res://assets/mainGame/wearing/0B.png" id="4_b2o75"]
+[ext_resource type="Texture2D" uid="uid://c8ipiqwnwtrgh" path="res://assets/mainGame/wearing/0D.PNG" id="5_i7lg1"]
+[ext_resource type="Texture2D" uid="uid://mufo6d2t8cwm" path="res://assets/mainGame/wearing/0A.png" id="5_sbar5"]
+[ext_resource type="Texture2D" uid="uid://dpvcqijqx8r7v" path="res://assets/mainGame/wearing/1A.png" id="6_i7lg1"]
+[ext_resource type="Texture2D" uid="uid://4dnj5k11pwlg" path="res://assets/mainGame/wearing/0C.PNG" id="6_o320l"]
+[ext_resource type="Texture2D" uid="uid://hkguti01hpaq" path="res://assets/mainGame/wearing/1B.png" id="7_o320l"]
+[ext_resource type="Texture2D" uid="uid://fdjw7coqxv71" path="res://assets/mainGame/wearing/2A.png" id="8_b5vrf"]
+[ext_resource type="Texture2D" uid="uid://yhm3tmy5wjqj" path="res://assets/mainGame/wearing/2B.png" id="9_dw7jy"]
+[ext_resource type="Texture2D" uid="uid://dnepafpnc4kho" path="res://assets/mainGame/wearing/3A.png" id="10_4ofax"]
+[ext_resource type="Texture2D" uid="uid://b5vvwv5kdcg5e" path="res://assets/mainGame/wearing/3B.png" id="11_fgh10"]
+[ext_resource type="Texture2D" uid="uid://npjvpi2m01in" path="res://assets/mainGame/wearing/4A.png" id="12_jnnyp"]
+[ext_resource type="Texture2D" uid="uid://b6om0hpbcltn0" path="res://assets/mainGame/wearing/4B.png" id="13_njulb"]
+[ext_resource type="Texture2D" uid="uid://lqi0mg8imbky" path="res://assets/mainGame/wearing/5B.png" id="14_nexux"]
+[ext_resource type="Texture2D" uid="uid://bh6dloc302326" path="res://assets/mainGame/wearing/5A.png" id="15_myrc1"]
+[ext_resource type="Texture2D" uid="uid://cai36m2rq873o" path="res://assets/mainGame/closet/buttons/buttonsheet2.PNG" id="17_b2o75"]
+
+[sub_resource type="FontVariation" id="FontVariation_q6nne"]
+variation_embolden = -0.26
+variation_transform = Transform2D(1, 0.015, 0.045, 1, 0, 0)
+spacing_glyph = 12
+spacing_top = -4
+spacing_bottom = -5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbar5"]
+atlas = ExtResource("17_b2o75")
+region = Rect2(1380, 1260, 119, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7lg1"]
+atlas = ExtResource("17_b2o75")
+region = Rect2(1380, 1415, 119, 120)
+margin = Rect2(0, 0, 0.31, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o320l"]
+atlas = ExtResource("17_b2o75")
+region = Rect2(1380, 1065, 119, 120)
+margin = Rect2(0, 0, 0.31, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5vrf"]
+atlas = ExtResource("17_b2o75")
+region = Rect2(158, 1258, 115, 114)
+margin = Rect2(0, 0, 0.31, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw7jy"]
+atlas = ExtResource("17_b2o75")
+region = Rect2(158, 1412, 115, 114)
+margin = Rect2(0, 0, 0.31, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ofax"]
+atlas = ExtResource("17_b2o75")
+region = Rect2(158, 1075, 115, 114)
+margin = Rect2(0, 0, 0.31, 0)
+
+[node name="Node2D" type="Node2D" unique_id=1291773009]
+script = ExtResource("1_q6nne")
+
+[node name="CodeLabel" type="Label" parent="." unique_id=3151208]
+z_index = 6
+offset_left = 745.0
+offset_top = -753.0
+offset_right = 1006.0
+offset_bottom = -690.0
+theme_override_colors/font_color = Color(0.48235294, 0.26666668, 0.2627451, 1)
+theme_override_fonts/font = SubResource("FontVariation_q6nne")
+theme_override_font_sizes/font_size = 52
+text = "eeeeee"
+horizontal_alignment = 1
+
+[node name="Person" type="Sprite2D" parent="." unique_id=2184797]
+z_index = 1
+position = Vector2(596, 0)
+texture = ExtResource("3_q6nne")
+
+[node name="hair" type="Node2D" parent="Person" unique_id=614137391]
+
+[node name="0a" type="Sprite2D" parent="Person/hair" unique_id=1687378232]
+z_index = 1
+texture = ExtResource("4_b2o75")
+
+[node name="0b" type="Sprite2D" parent="Person/hair" unique_id=45419912]
+z_index = 1
+texture = ExtResource("5_sbar5")
+
+[node name="0c" type="Sprite2D" parent="Person/hair" unique_id=579044811]
+texture = ExtResource("5_i7lg1")
+
+[node name="0d" type="Sprite2D" parent="Person/hair" unique_id=35160628]
+texture = ExtResource("6_o320l")
+
+[node name="tops" type="Node2D" parent="Person" unique_id=824451954]
+
+[node name="1a" type="Sprite2D" parent="Person/tops" unique_id=1762938547]
+z_index = 2
+texture = ExtResource("6_i7lg1")
+
+[node name="1b" type="Sprite2D" parent="Person/tops" unique_id=1783753868]
+z_index = 2
+texture = ExtResource("7_o320l")
+
+[node name="bottoms" type="Node2D" parent="Person" unique_id=2023457700]
+
+[node name="2a" type="Sprite2D" parent="Person/bottoms" unique_id=619596622]
+texture = ExtResource("8_b5vrf")
+
+[node name="2b" type="Sprite2D" parent="Person/bottoms" unique_id=669284237]
+texture = ExtResource("9_dw7jy")
+
+[node name="dresses" type="Node2D" parent="Person" unique_id=1008904733]
+z_index = 1
+
+[node name="3a" type="Sprite2D" parent="Person/dresses" unique_id=1576556169]
+texture = ExtResource("10_4ofax")
+
+[node name="3b" type="Sprite2D" parent="Person/dresses" unique_id=1803380771]
+texture = ExtResource("11_fgh10")
+
+[node name="socks" type="Node2D" parent="Person" unique_id=168253380]
+
+[node name="4a" type="Sprite2D" parent="Person/socks" unique_id=202829859]
+texture = ExtResource("12_jnnyp")
+
+[node name="4b" type="Sprite2D" parent="Person/socks" unique_id=1146822089]
+texture = ExtResource("13_njulb")
+
+[node name="shoes" type="Node2D" parent="Person" unique_id=879499721]
+
+[node name="5a" type="Sprite2D" parent="Person/shoes" unique_id=586292855]
+texture = ExtResource("14_nexux")
+
+[node name="5b" type="Sprite2D" parent="Person/shoes" unique_id=12757084]
+texture = ExtResource("15_myrc1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1284080865]
+zoom = Vector2(0.5, 0.5)
+
+[node name="background" type="Sprite2D" parent="." unique_id=1723131275]
+texture = ExtResource("1_1ikw5")
+
+[node name="shining" type="Sprite2D" parent="." unique_id=1939336567]
+texture = ExtResource("2_p8erj")
+
+[node name="game" type="TextureButton" parent="." unique_id=862081386]
+offset_left = -965.0
+offset_top = 556.0
+offset_right = -846.0
+offset_bottom = 676.0
+texture_normal = SubResource("AtlasTexture_sbar5")
+texture_pressed = SubResource("AtlasTexture_i7lg1")
+texture_hover = SubResource("AtlasTexture_o320l")
+
+[node name="home" type="TextureButton" parent="." unique_id=730603397]
+offset_left = 858.0
+offset_top = 556.0
+offset_right = 973.0
+offset_bottom = 670.0
+texture_normal = SubResource("AtlasTexture_b5vrf")
+texture_pressed = SubResource("AtlasTexture_dw7jy")
+texture_hover = SubResource("AtlasTexture_4ofax")
+
+[connection signal="pressed" from="game" to="." method="_on_game_pressed"]
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]

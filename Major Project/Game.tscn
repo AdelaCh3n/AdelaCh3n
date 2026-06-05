@@ -2,23 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://cxhv6op06bhhc" path="res://assets/mainGame/background.png" id="1_0yprl"]
 [ext_resource type="Texture2D" uid="uid://cai36m2rq873o" path="res://assets/mainGame/closet/buttons/buttonsheet2.PNG" id="1_bvhbk"]
-[ext_resource type="Texture2D" uid="uid://yy4mc4gpw7h" path="res://assets/mainGame/person.png" id="2_wuoie"]
-[ext_resource type="Texture2D" uid="uid://6u40qrn7d61h" path="res://assets/mainGame/wearing/0B.png" id="3_bvhbk"]
 [ext_resource type="Texture2D" uid="uid://dr4gg8mv1ugcp" path="res://assets/mainGame/closet/buttons/code.PNG" id="3_cpsxm"]
-[ext_resource type="Texture2D" uid="uid://mufo6d2t8cwm" path="res://assets/mainGame/wearing/0A.png" id="4_cpsxm"]
-[ext_resource type="Texture2D" uid="uid://dpvcqijqx8r7v" path="res://assets/mainGame/wearing/1A.png" id="5_hmewc"]
-[ext_resource type="Texture2D" uid="uid://hkguti01hpaq" path="res://assets/mainGame/wearing/1B.png" id="6_7ged1"]
-[ext_resource type="Texture2D" uid="uid://fdjw7coqxv71" path="res://assets/mainGame/wearing/2A.png" id="7_0mevm"]
-[ext_resource type="Texture2D" uid="uid://yhm3tmy5wjqj" path="res://assets/mainGame/wearing/2B.png" id="8_w2501"]
-[ext_resource type="Texture2D" uid="uid://dnepafpnc4kho" path="res://assets/mainGame/wearing/3A.png" id="9_jsoai"]
-[ext_resource type="Texture2D" uid="uid://b5vvwv5kdcg5e" path="res://assets/mainGame/wearing/3B.png" id="10_bisgb"]
-[ext_resource type="Texture2D" uid="uid://npjvpi2m01in" path="res://assets/mainGame/wearing/4A.png" id="11_y5ctq"]
-[ext_resource type="Texture2D" uid="uid://b6om0hpbcltn0" path="res://assets/mainGame/wearing/4B.png" id="12_w7ht3"]
-[ext_resource type="Texture2D" uid="uid://bh6dloc302326" path="res://assets/mainGame/wearing/5A.png" id="13_8ktx7"]
-[ext_resource type="Texture2D" uid="uid://lqi0mg8imbky" path="res://assets/mainGame/wearing/5B.png" id="14_hwsgv"]
+[ext_resource type="PackedScene" uid="uid://cc45qau76ccba" path="res://person.tscn" id="10_yx171"]
 [ext_resource type="Texture2D" uid="uid://cysof3skqgl7e" path="res://assets/mainGame/closet.png" id="15_gebyw"]
 [ext_resource type="Script" uid="uid://cxwpjdjkbtlbl" path="res://prototype/closet.gd" id="16_4my3f"]
 [ext_resource type="Texture2D" uid="uid://dpf0mc0qm5m4j" path="res://assets/mainGame/closet/buttons/buttonSheet.png" id="17_aeq37"]
+[ext_resource type="Texture2D" uid="uid://bhuxankmq74ro" path="res://assets/mainGame/closet/clothes/hair0.2.PNG" id="22_w2501"]
+[ext_resource type="Texture2D" uid="uid://d30bo0jk0by7s" path="res://assets/mainGame/closet/buttons/wardrobe.png" id="25_y5ctq"]
+[ext_resource type="Texture2D" uid="uid://p48sqnum10yy" path="res://assets/mainGame/closet/clothes/clothe0.2.PNG" id="26_8ktx7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpsxm"]
 atlas = ExtResource("1_bvhbk")
@@ -31,6 +22,18 @@ region = Rect2(158, 1412, 115, 114)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsoai"]
 atlas = ExtResource("1_bvhbk")
 region = Rect2(158, 1075, 115, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gebyw"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(845, 1258, 123, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4my3f"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(845, 1412, 123, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeq37"]
+atlas = ExtResource("1_bvhbk")
+region = Rect2(845, 1075, 123, 123)
 
 [sub_resource type="FontVariation" id="FontVariation_bvhbk"]
 variation_embolden = -0.26
@@ -155,189 +158,294 @@ region = Rect2(2015, 1269, 110, 128)
 atlas = ExtResource("17_aeq37")
 region = Rect2(1690, 1269, 110, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyvha"]
+atlas = ExtResource("25_y5ctq")
+region = Rect2(877, 464, 113, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc54d"]
+atlas = ExtResource("25_y5ctq")
+region = Rect2(887, 610, 113, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w250u"]
+atlas = ExtResource("25_y5ctq")
+region = Rect2(881, 325, 113, 116)
+
 [sub_resource type="GDScript" id="GDScript_suycs"]
 script/source = "extends Node2D
 "
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2hxjc"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bvhbk"]
 load_path = "res://.godot/imported/clothes buttons.png-a130d9f01020773b6c682053c9853a7f.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xo8l"]
-atlas = SubResource("CompressedTexture2D_2hxjc")
+atlas = SubResource("CompressedTexture2D_bvhbk")
 region = Rect2(2126, 58, 291, 476)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xfyss"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cpsxm"]
 load_path = "res://.godot/imported/clothes buttons.png-a130d9f01020773b6c682053c9853a7f.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ngjr"]
-atlas = SubResource("CompressedTexture2D_xfyss")
+atlas = SubResource("CompressedTexture2D_cpsxm")
 region = Rect2(2471, 58, 291, 476)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qilgh"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hmewc"]
 load_path = "res://.godot/imported/clothes buttons.png-a130d9f01020773b6c682053c9853a7f.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4qosj"]
-atlas = SubResource("CompressedTexture2D_qilgh")
+atlas = SubResource("CompressedTexture2D_hmewc")
 region = Rect2(1784, 58, 291, 476)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cjlbh"]
-atlas = SubResource("CompressedTexture2D_2hxjc")
+atlas = SubResource("CompressedTexture2D_bvhbk")
 region = Rect2(2130, 552, 324, 507)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kfelt"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ged1"]
 load_path = "res://.godot/imported/clothes buttons.png-a130d9f01020773b6c682053c9853a7f.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ytlpd"]
-atlas = SubResource("CompressedTexture2D_kfelt")
+atlas = SubResource("CompressedTexture2D_7ged1")
 region = Rect2(2475, 552, 324, 507)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2v765"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0mevm"]
 load_path = "res://.godot/imported/clothes buttons.png-a130d9f01020773b6c682053c9853a7f.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8fb0"]
-atlas = SubResource("CompressedTexture2D_2v765")
+atlas = SubResource("CompressedTexture2D_0mevm")
 region = Rect2(1788, 552, 324, 507)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2nhjh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_suycs"]
+atlas = ExtResource("22_w2501")
+region = Rect2(626, 324, 287, 505)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_202ut"]
+atlas = ExtResource("22_w2501")
+region = Rect2(1111, 324, 287, 505)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5he1h"]
+atlas = ExtResource("22_w2501")
+region = Rect2(167, 324, 287, 505)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwkxq"]
+atlas = ExtResource("22_w2501")
+region = Rect2(613, 915, 298, 505)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdm1y"]
+atlas = ExtResource("22_w2501")
+region = Rect2(1098, 915, 298, 505)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxy8k"]
+atlas = ExtResource("22_w2501")
+region = Rect2(154, 915, 298, 505)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w2501"]
 load_path = "res://.godot/imported/clothes buttons.png-a130d9f01020773b6c682053c9853a7f.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjha6"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(2132, 1090, 376, 418)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gt76g"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jsoai"]
 load_path = "res://.godot/imported/clothes buttons.png-a130d9f01020773b6c682053c9853a7f.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fr6y"]
-atlas = SubResource("CompressedTexture2D_gt76g")
+atlas = SubResource("CompressedTexture2D_jsoai")
 region = Rect2(2539, 1090, 376, 418)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ebxd8"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bisgb"]
 load_path = "res://.godot/imported/clothes buttons.png-a130d9f01020773b6c682053c9853a7f.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xfyss"]
-atlas = SubResource("CompressedTexture2D_ebxd8")
+atlas = SubResource("CompressedTexture2D_bisgb")
 region = Rect2(1732, 1090, 376, 418)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qilgh"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(2139, 1587, 334, 406)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfelt"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(2489, 1587, 334, 406)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2v765"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(1789, 1587, 334, 406)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t1a5"]
+atlas = ExtResource("26_8ktx7")
+region = Rect2(569, 804, 516, 494)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8576b"]
+atlas = ExtResource("26_8ktx7")
+region = Rect2(1138, 804, 516, 494)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68r7h"]
+atlas = ExtResource("26_8ktx7")
+region = Rect2(30, 804, 516, 494)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma08v"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(478, 56, 372, 379)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s32dh"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(886, 56, 372, 379)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_037st"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(75, 56, 372, 379)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6orn5"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(423, 461, 295, 345)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_whnp6"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(748, 461, 295, 345)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_22e24"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(103, 461, 295, 345)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vltt"]
+atlas = ExtResource("26_8ktx7")
+region = Rect2(492, 22, 424, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj2yu"]
+atlas = ExtResource("26_8ktx7")
+region = Rect2(993, 22, 424, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iueff"]
+atlas = ExtResource("26_8ktx7")
+region = Rect2(20, 22, 424, 732)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_k73cj"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(456, 846, 302, 894)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjqkl"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(799, 846, 302, 894)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fs4d3"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(116, 846, 302, 894)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vxoj"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(614, 1801, 515, 694)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ei405"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(1163, 1801, 515, 694)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8dv2"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(63, 1801, 515, 694)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2nhjh"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(2229, 2066, 208, 381)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gt76g"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(2524, 2036, 208, 381)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7xe6"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(1910, 2064, 208, 381)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqmsq"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(2282, 2469, 191, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkgk1"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(2558, 2469, 191, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qgxp6"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(2024, 2463, 191, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqk8q"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(530, 2659, 291, 211)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6uidu"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(920, 2665, 291, 211)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qu7as"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(158, 2659, 291, 211)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_akb8o"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(2079, 2804, 322, 195)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3mf0"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(2493, 2810, 322, 195)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kejda"]
-atlas = SubResource("CompressedTexture2D_2nhjh")
+atlas = SubResource("CompressedTexture2D_w2501")
 region = Rect2(1637, 2804, 322, 195)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7324"]
+atlas = ExtResource("26_8ktx7")
+region = Rect2(1872, 70, 322, 438)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6tbt"]
+atlas = ExtResource("26_8ktx7")
+region = Rect2(1872, 544, 322, 438)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5dxo"]
+atlas = ExtResource("26_8ktx7")
+region = Rect2(1522, 70, 322, 438)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h3yf"]
+atlas = ExtResource("25_y5ctq")
+region = Rect2(1074, 832, 347, 515)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyc7o"]
+atlas = ExtResource("25_y5ctq")
+region = Rect2(1484, 832, 347, 515)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds8mp"]
+atlas = ExtResource("25_y5ctq")
+region = Rect2(1478, 243, 347, 515)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbwgg"]
+atlas = ExtResource("25_y5ctq")
+region = Rect2(1190, 668, 101, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndmee"]
+atlas = ExtResource("25_y5ctq")
+region = Rect2(1306, 670, 101, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lua15"]
+atlas = ExtResource("25_y5ctq")
+region = Rect2(1074, 670, 101, 100)
 
 [node name="Game" type="Node2D" unique_id=1294315420]
 
 [node name="home" type="TextureButton" parent="." unique_id=1561170444]
 z_index = 1
-offset_left = -1003.0
-offset_top = 471.0
-offset_right = -888.0
-offset_bottom = 585.0
+offset_left = -991.0
+offset_top = 405.0
+offset_right = -876.0
+offset_bottom = 519.0
 texture_normal = SubResource("AtlasTexture_cpsxm")
 texture_pressed = SubResource("AtlasTexture_hmewc")
 texture_hover = SubResource("AtlasTexture_jsoai")
+
+[node name="result" type="TextureButton" parent="." unique_id=111531838]
+offset_left = -995.0
+offset_top = 555.0
+offset_right = -872.0
+offset_bottom = 678.0
+texture_normal = SubResource("AtlasTexture_gebyw")
+texture_pressed = SubResource("AtlasTexture_4my3f")
+texture_hover = SubResource("AtlasTexture_aeq37")
 
 [node name="CodeLabel" type="Label" parent="." unique_id=574204249]
 z_index = 6
@@ -412,62 +520,6 @@ texture = ExtResource("1_0yprl")
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1247776906]
 texture = ExtResource("3_cpsxm")
 
-[node name="Person" type="Sprite2D" parent="." unique_id=630698845]
-texture = ExtResource("2_wuoie")
-
-[node name="hair" type="Node2D" parent="Person" unique_id=581756168]
-
-[node name="0a" type="Sprite2D" parent="Person/hair" unique_id=1728029814]
-z_index = 1
-texture = ExtResource("3_bvhbk")
-
-[node name="0b" type="Sprite2D" parent="Person/hair" unique_id=1631455014]
-z_index = 1
-texture = ExtResource("4_cpsxm")
-
-[node name="tops" type="Node2D" parent="Person" unique_id=493284634]
-
-[node name="1a" type="Sprite2D" parent="Person/tops" unique_id=1152915655]
-z_index = 2
-texture = ExtResource("5_hmewc")
-
-[node name="1b" type="Sprite2D" parent="Person/tops" unique_id=1257798822]
-z_index = 2
-texture = ExtResource("6_7ged1")
-
-[node name="bottoms" type="Node2D" parent="Person" unique_id=1721880488]
-
-[node name="2a" type="Sprite2D" parent="Person/bottoms" unique_id=355589043]
-texture = ExtResource("7_0mevm")
-
-[node name="2b" type="Sprite2D" parent="Person/bottoms" unique_id=1492878747]
-texture = ExtResource("8_w2501")
-
-[node name="dresses" type="Node2D" parent="Person" unique_id=681205076]
-z_index = 1
-
-[node name="3a" type="Sprite2D" parent="Person/dresses" unique_id=1086824453]
-texture = ExtResource("9_jsoai")
-
-[node name="3b" type="Sprite2D" parent="Person/dresses" unique_id=929542680]
-texture = ExtResource("10_bisgb")
-
-[node name="socks" type="Node2D" parent="Person" unique_id=1790765539]
-
-[node name="4a" type="Sprite2D" parent="Person/socks" unique_id=1458854661]
-texture = ExtResource("11_y5ctq")
-
-[node name="4b" type="Sprite2D" parent="Person/socks" unique_id=510241185]
-texture = ExtResource("12_w7ht3")
-
-[node name="shoes" type="Node2D" parent="Person" unique_id=1241191520]
-
-[node name="5a" type="Sprite2D" parent="Person/shoes" unique_id=1807616559]
-texture = ExtResource("14_hwsgv")
-
-[node name="5b" type="Sprite2D" parent="Person/shoes" unique_id=606273682]
-texture = ExtResource("13_8ktx7")
-
 [node name="Closet" type="Sprite2D" parent="." unique_id=832237030]
 texture = ExtResource("15_gebyw")
 script = ExtResource("16_4my3f")
@@ -531,6 +583,16 @@ texture_normal = SubResource("AtlasTexture_fshgd")
 texture_pressed = SubResource("AtlasTexture_lbrxf")
 texture_hover = SubResource("AtlasTexture_xjt7e")
 
+[node name="wardrobe" type="TextureButton" parent="Closet/buttons" unique_id=1248645852]
+z_index = -1
+offset_left = -293.0
+offset_top = -627.0
+offset_right = -180.0
+offset_bottom = -511.0
+texture_normal = SubResource("AtlasTexture_dyvha")
+texture_pressed = SubResource("AtlasTexture_xc54d")
+texture_hover = SubResource("AtlasTexture_w250u")
+
 [node name="clothes" type="Node2D" parent="Closet" unique_id=2146520325]
 script = SubResource("GDScript_suycs")
 
@@ -556,7 +618,26 @@ texture_pressed = SubResource("AtlasTexture_ytlpd")
 texture_hover = SubResource("AtlasTexture_b8fb0")
 metadata/_edit_use_anchors_ = true
 
+[node name="0c" type="TextureButton" parent="Closet/clothes/0" unique_id=2082086273]
+offset_left = -50.0
+offset_top = 38.0
+offset_right = 237.0
+offset_bottom = 543.0
+texture_normal = SubResource("AtlasTexture_suycs")
+texture_pressed = SubResource("AtlasTexture_202ut")
+texture_hover = SubResource("AtlasTexture_5he1h")
+
+[node name="0d" type="TextureButton" parent="Closet/clothes/0" unique_id=1464959955]
+offset_left = 365.0
+offset_top = 39.0
+offset_right = 663.0
+offset_bottom = 544.0
+texture_normal = SubResource("AtlasTexture_xwkxq")
+texture_pressed = SubResource("AtlasTexture_wdm1y")
+texture_hover = SubResource("AtlasTexture_hxy8k")
+
 [node name="1" type="Sprite2D" parent="Closet/clothes" unique_id=478837316]
+visible = false
 
 [node name="1a" type="TextureButton" parent="Closet/clothes/1" unique_id=271458107]
 offset_left = -101.0
@@ -578,29 +659,49 @@ texture_pressed = SubResource("AtlasTexture_kfelt")
 texture_hover = SubResource("AtlasTexture_2v765")
 metadata/_edit_use_anchors_ = true
 
+[node name="1c" type="TextureButton" parent="Closet/clothes/1" unique_id=734201220]
+offset_left = -153.0
+offset_top = 23.0
+offset_right = 363.0
+offset_bottom = 517.0
+texture_normal = SubResource("AtlasTexture_2t1a5")
+texture_pressed = SubResource("AtlasTexture_8576b")
+texture_hover = SubResource("AtlasTexture_68r7h")
+
 [node name="2" type="Sprite2D" parent="Closet/clothes" unique_id=1295038629]
+visible = false
 
 [node name="2a" type="TextureButton" parent="Closet/clothes/2" unique_id=750930615]
-offset_left = -114.0
-offset_top = -387.0
-offset_right = 258.0
-offset_bottom = -8.0
+offset_left = -66.0
+offset_top = -589.0
+offset_right = 306.0
+offset_bottom = -210.0
 texture_normal = SubResource("AtlasTexture_ma08v")
 texture_pressed = SubResource("AtlasTexture_s32dh")
 texture_hover = SubResource("AtlasTexture_037st")
 metadata/_edit_use_anchors_ = true
 
 [node name="2b" type="TextureButton" parent="Closet/clothes/2" unique_id=923791591]
-offset_left = 358.0
-offset_top = -372.0
-offset_right = 653.0
-offset_bottom = -27.0
+offset_left = 376.0
+offset_top = -603.0
+offset_right = 671.0
+offset_bottom = -258.0
 texture_normal = SubResource("AtlasTexture_6orn5")
 texture_pressed = SubResource("AtlasTexture_whnp6")
 texture_hover = SubResource("AtlasTexture_22e24")
 metadata/_edit_use_anchors_ = true
 
+[node name="2c" type="TextureButton" parent="Closet/clothes/2" unique_id=956306047]
+offset_left = -85.0
+offset_top = -159.0
+offset_right = 339.0
+offset_bottom = 573.0
+texture_normal = SubResource("AtlasTexture_7vltt")
+texture_pressed = SubResource("AtlasTexture_fj2yu")
+texture_hover = SubResource("AtlasTexture_iueff")
+
 [node name="3" type="Sprite2D" parent="Closet/clothes" unique_id=1037622248]
+visible = false
 
 [node name="3a" type="TextureButton" parent="Closet/clothes/3" unique_id=597549526]
 z_index = 2
@@ -625,6 +726,7 @@ texture_hover = SubResource("AtlasTexture_e8dv2")
 metadata/_edit_use_anchors_ = true
 
 [node name="4" type="Sprite2D" parent="Closet/clothes" unique_id=1949587150]
+visible = false
 
 [node name="4a" type="TextureButton" parent="Closet/clothes/4" unique_id=1308970552]
 offset_left = -37.0
@@ -668,7 +770,109 @@ texture_pressed = SubResource("AtlasTexture_t3mf0")
 texture_hover = SubResource("AtlasTexture_kejda")
 metadata/_edit_use_anchors_ = true
 
+[node name="5c" type="TextureButton" parent="Closet/clothes/5" unique_id=1844337966]
+offset_left = -66.0
+offset_top = -504.0
+offset_right = 256.0
+offset_bottom = -66.0
+texture_normal = SubResource("AtlasTexture_n7324")
+texture_pressed = SubResource("AtlasTexture_o6tbt")
+texture_hover = SubResource("AtlasTexture_v5dxo")
+
+[node name="wardrobe" type="Sprite2D" parent="Closet/clothes" unique_id=1051311086]
+
+[node name="load1" type="TextureButton" parent="Closet/clothes/wardrobe" unique_id=1320166832]
+offset_left = -124.0
+offset_top = -627.0
+offset_right = 223.0
+offset_bottom = -112.0
+texture_normal = SubResource("AtlasTexture_3h3yf")
+texture_pressed = SubResource("AtlasTexture_nyc7o")
+texture_hover = SubResource("AtlasTexture_ds8mp")
+
+[node name="load2" type="TextureButton" parent="Closet/clothes/wardrobe" unique_id=2000447372]
+offset_left = 359.0
+offset_top = -621.0
+offset_right = 706.0
+offset_bottom = -106.0
+texture_normal = SubResource("AtlasTexture_3h3yf")
+texture_pressed = SubResource("AtlasTexture_nyc7o")
+texture_hover = SubResource("AtlasTexture_ds8mp")
+
+[node name="load3" type="TextureButton" parent="Closet/clothes/wardrobe" unique_id=219554064]
+offset_left = -124.0
+offset_top = 24.0
+offset_right = 223.0
+offset_bottom = 539.0
+texture_normal = SubResource("AtlasTexture_3h3yf")
+texture_pressed = SubResource("AtlasTexture_nyc7o")
+texture_hover = SubResource("AtlasTexture_ds8mp")
+
+[node name="load4" type="TextureButton" parent="Closet/clothes/wardrobe" unique_id=658091670]
+offset_left = 365.0
+offset_top = 17.0
+offset_right = 712.0
+offset_bottom = 532.0
+texture_normal = SubResource("AtlasTexture_3h3yf")
+texture_pressed = SubResource("AtlasTexture_nyc7o")
+texture_hover = SubResource("AtlasTexture_ds8mp")
+
+[node name="save1" type="TextureButton" parent="Closet/clothes/wardrobe" unique_id=969649756]
+offset_left = 3.0
+offset_top = -105.0
+offset_right = 104.0
+offset_bottom = -5.0
+texture_normal = SubResource("AtlasTexture_pbwgg")
+texture_pressed = SubResource("AtlasTexture_ndmee")
+texture_hover = SubResource("AtlasTexture_lua15")
+
+[node name="preview1" parent="Closet/clothes/wardrobe/save1" unique_id=640127103 instance=ExtResource("10_yx171")]
+position = Vector2(227, -261)
+scale = Vector2(0.3, 0.3)
+
+[node name="save2" type="TextureButton" parent="Closet/clothes/wardrobe" unique_id=56896233]
+offset_left = 481.0
+offset_top = -105.0
+offset_right = 582.0
+offset_bottom = -5.0
+texture_normal = SubResource("AtlasTexture_pbwgg")
+texture_pressed = SubResource("AtlasTexture_ndmee")
+texture_hover = SubResource("AtlasTexture_lua15")
+
+[node name="preview2" parent="Closet/clothes/wardrobe/save2" unique_id=1890634327 instance=ExtResource("10_yx171")]
+position = Vector2(227, -261)
+scale = Vector2(0.3, 0.3)
+
+[node name="save3" type="TextureButton" parent="Closet/clothes/wardrobe" unique_id=1237688210]
+offset_left = 3.0
+offset_top = 552.0
+offset_right = 104.0
+offset_bottom = 652.0
+texture_normal = SubResource("AtlasTexture_pbwgg")
+texture_pressed = SubResource("AtlasTexture_ndmee")
+texture_hover = SubResource("AtlasTexture_lua15")
+
+[node name="preview3" parent="Closet/clothes/wardrobe/save3" unique_id=192018470 instance=ExtResource("10_yx171")]
+position = Vector2(227, -273.00006)
+scale = Vector2(0.3, 0.3)
+
+[node name="save4" type="TextureButton" parent="Closet/clothes/wardrobe" unique_id=1262796138]
+offset_left = 498.0
+offset_top = 548.0
+offset_right = 599.0
+offset_bottom = 648.0
+texture_normal = SubResource("AtlasTexture_pbwgg")
+texture_pressed = SubResource("AtlasTexture_ndmee")
+texture_hover = SubResource("AtlasTexture_lua15")
+
+[node name="preview4" parent="Closet/clothes/wardrobe/save4" unique_id=247791168 instance=ExtResource("10_yx171")]
+position = Vector2(220, -272)
+scale = Vector2(0.3, 0.3)
+
+[node name="Person" parent="." unique_id=802869386 instance=ExtResource("10_yx171")]
+
 [connection signal="pressed" from="home" to="Closet" method="_on_home_pressed"]
+[connection signal="pressed" from="result" to="Closet" method="_on_result_pressed"]
 [connection signal="pressed" from="loadButton" to="Closet" method="_on_load_button_pressed"]
 [connection signal="pressed" from="random" to="Closet" method="_on_random_pressed"]
 [connection signal="pressed" from="reset" to="Closet" method="_on_reset_pressed"]
@@ -678,15 +882,29 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Closet/buttons/3" to="Closet" method="_on_3_pressed"]
 [connection signal="pressed" from="Closet/buttons/4" to="Closet" method="_on_4_pressed"]
 [connection signal="pressed" from="Closet/buttons/5" to="Closet" method="_on_5_pressed"]
+[connection signal="pressed" from="Closet/buttons/wardrobe" to="Closet" method="_on_wardrobe_pressed"]
 [connection signal="pressed" from="Closet/clothes/0/0a" to="Closet" method="_on_0a_pressed"]
 [connection signal="pressed" from="Closet/clothes/0/0b" to="Closet" method="_on_0b_pressed"]
+[connection signal="pressed" from="Closet/clothes/0/0c" to="Closet" method="_on_0c_pressed"]
+[connection signal="pressed" from="Closet/clothes/0/0d" to="Closet" method="_on_0d_pressed"]
 [connection signal="pressed" from="Closet/clothes/1/1a" to="Closet" method="_on_1a_pressed"]
 [connection signal="pressed" from="Closet/clothes/1/1b" to="Closet" method="_on_1b_pressed"]
+[connection signal="pressed" from="Closet/clothes/1/1c" to="Closet" method="_on_1c_pressed"]
 [connection signal="pressed" from="Closet/clothes/2/2a" to="Closet" method="_on_2a_pressed"]
 [connection signal="pressed" from="Closet/clothes/2/2b" to="Closet" method="_on_2b_pressed"]
+[connection signal="pressed" from="Closet/clothes/2/2c" to="Closet" method="_on_2c_pressed"]
 [connection signal="pressed" from="Closet/clothes/3/3a" to="Closet" method="_on_3a_pressed"]
 [connection signal="pressed" from="Closet/clothes/3/3b" to="Closet" method="_on_3b_pressed"]
 [connection signal="pressed" from="Closet/clothes/4/4a" to="Closet" method="_on_4a_pressed"]
 [connection signal="pressed" from="Closet/clothes/4/4b" to="Closet" method="_on_4b_pressed"]
 [connection signal="pressed" from="Closet/clothes/5/5a" to="Closet" method="_on_5b_pressed"]
 [connection signal="pressed" from="Closet/clothes/5/5b" to="Closet" method="_on_5a_pressed"]
+[connection signal="pressed" from="Closet/clothes/5/5c" to="Closet" method="_on_5c_pressed"]
+[connection signal="pressed" from="Closet/clothes/wardrobe/load1" to="Closet" method="_on_load_1_pressed"]
+[connection signal="pressed" from="Closet/clothes/wardrobe/load2" to="Closet" method="_on_load_2_pressed"]
+[connection signal="pressed" from="Closet/clothes/wardrobe/load3" to="Closet" method="_on_load_3_pressed"]
+[connection signal="pressed" from="Closet/clothes/wardrobe/load4" to="Closet" method="_on_load_4_pressed"]
+[connection signal="pressed" from="Closet/clothes/wardrobe/save1" to="Closet" method="_on_save_1_pressed"]
+[connection signal="pressed" from="Closet/clothes/wardrobe/save2" to="Closet" method="_on_save_2_pressed"]
+[connection signal="pressed" from="Closet/clothes/wardrobe/save3" to="Closet" method="_on_save_3_pressed"]
+[connection signal="pressed" from="Closet/clothes/wardrobe/save4" to="Closet" method="_on_save_4_pressed"]

@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cc45qau76ccba"]
+
+[ext_resource type="Texture2D" uid="uid://yy4mc4gpw7h" path="res://assets/mainGame/person.png" id="1_5xxbx"]
+[ext_resource type="Texture2D" uid="uid://6u40qrn7d61h" path="res://assets/mainGame/wearing/0B.png" id="2_pw1l0"]
+[ext_resource type="Texture2D" uid="uid://mufo6d2t8cwm" path="res://assets/mainGame/wearing/0A.png" id="3_0w2ho"]
+[ext_resource type="Texture2D" uid="uid://c8ipiqwnwtrgh" path="res://assets/mainGame/wearing/0D.PNG" id="4_3roi3"]
+[ext_resource type="Texture2D" uid="uid://4dnj5k11pwlg" path="res://assets/mainGame/wearing/0C.PNG" id="5_ie2l2"]
+[ext_resource type="Texture2D" uid="uid://dpvcqijqx8r7v" path="res://assets/mainGame/wearing/1A.png" id="6_d40lq"]
+[ext_resource type="Texture2D" uid="uid://hkguti01hpaq" path="res://assets/mainGame/wearing/1B.png" id="7_6pnay"]
+[ext_resource type="Texture2D" uid="uid://b8ec5s5lc5ui2" path="res://assets/mainGame/wearing/1C.PNG" id="8_krl01"]
+[ext_resource type="Texture2D" uid="uid://fdjw7coqxv71" path="res://assets/mainGame/wearing/2A.png" id="9_q5pc7"]
+[ext_resource type="Texture2D" uid="uid://yhm3tmy5wjqj" path="res://assets/mainGame/wearing/2B.png" id="10_s0bj7"]
+[ext_resource type="Texture2D" uid="uid://bdi17yx3lvu7a" path="res://assets/mainGame/wearing/2C.PNG" id="11_oiqbj"]
+[ext_resource type="Texture2D" uid="uid://dnepafpnc4kho" path="res://assets/mainGame/wearing/3A.png" id="12_phpe3"]
+[ext_resource type="Texture2D" uid="uid://b5vvwv5kdcg5e" path="res://assets/mainGame/wearing/3B.png" id="13_ivx4x"]
+[ext_resource type="Texture2D" uid="uid://npjvpi2m01in" path="res://assets/mainGame/wearing/4A.png" id="14_d01os"]
+[ext_resource type="Texture2D" uid="uid://b6om0hpbcltn0" path="res://assets/mainGame/wearing/4B.png" id="15_002ph"]
+[ext_resource type="Texture2D" uid="uid://lqi0mg8imbky" path="res://assets/mainGame/wearing/5B.png" id="16_rd61y"]
+[ext_resource type="Texture2D" uid="uid://bh6dloc302326" path="res://assets/mainGame/wearing/5A.png" id="17_1tdf3"]
+[ext_resource type="Texture2D" uid="uid://dthu6it0qs1lo" path="res://assets/mainGame/wearing/5C.PNG" id="18_0b4fe"]
+
+[node name="Person" type="Sprite2D" unique_id=640127103]
+texture = ExtResource("1_5xxbx")
+
+[node name="hair" type="Node2D" parent="." unique_id=1162876204]
+
+[node name="0a" type="Sprite2D" parent="hair" unique_id=1842032188]
+z_index = 1
+texture = ExtResource("2_pw1l0")
+
+[node name="0b" type="Sprite2D" parent="hair" unique_id=265386683]
+z_index = 1
+texture = ExtResource("3_0w2ho")
+
+[node name="0c" type="Sprite2D" parent="hair" unique_id=191278000]
+texture = ExtResource("4_3roi3")
+
+[node name="0d" type="Sprite2D" parent="hair" unique_id=746873203]
+texture = ExtResource("5_ie2l2")
+
+[node name="tops" type="Node2D" parent="." unique_id=605753883]
+
+[node name="1a" type="Sprite2D" parent="tops" unique_id=1017994534]
+z_index = 2
+texture = ExtResource("6_d40lq")
+
+[node name="1b" type="Sprite2D" parent="tops" unique_id=1593685739]
+z_index = 2
+texture = ExtResource("7_6pnay")
+
+[node name="1c" type="Sprite2D" parent="tops" unique_id=1100071357]
+texture = ExtResource("8_krl01")
+
+[node name="bottoms" type="Node2D" parent="." unique_id=937044309]
+
+[node name="2a" type="Sprite2D" parent="bottoms" unique_id=2126673777]
+texture = ExtResource("9_q5pc7")
+
+[node name="2b" type="Sprite2D" parent="bottoms" unique_id=1238300729]
+texture = ExtResource("10_s0bj7")
+
+[node name="2c" type="Sprite2D" parent="bottoms" unique_id=301549571]
+z_index = 1
+texture = ExtResource("11_oiqbj")
+
+[node name="dresses" type="Node2D" parent="." unique_id=534276649]
+z_index = 1
+
+[node name="3a" type="Sprite2D" parent="dresses" unique_id=1925945865]
+texture = ExtResource("12_phpe3")
+
+[node name="3b" type="Sprite2D" parent="dresses" unique_id=1807099755]
+texture = ExtResource("13_ivx4x")
+
+[node name="socks" type="Node2D" parent="." unique_id=348084745]
+
+[node name="4a" type="Sprite2D" parent="socks" unique_id=737153989]
+texture = ExtResource("14_d01os")
+
+[node name="4b" type="Sprite2D" parent="socks" unique_id=144931197]
+texture = ExtResource("15_002ph")
+
+[node name="shoes" type="Node2D" parent="." unique_id=2010520191]
+
+[node name="5a" type="Sprite2D" parent="shoes" unique_id=1881242187]
+texture = ExtResource("16_rd61y")
+
+[node name="5b" type="Sprite2D" parent="shoes" unique_id=1598853278]
+texture = ExtResource("17_1tdf3")
+
+[node name="5c" type="Sprite2D" parent="shoes" unique_id=1240801970]
+texture = ExtResource("18_0b4fe")

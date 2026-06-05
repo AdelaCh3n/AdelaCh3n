@@ -1,19 +1,17 @@
 extends Node2D
 
 var StartPage = "res://start_page.tscn"
-var ResultPage = "res://result_page.tscn"
+var Game = "res://Game.tscn"
 
-@onready var clothes = $clothes
-@onready var code_input = $"../CodeInput"
-@onready var code_label = $"../CodeLabel"
-	
+@onready var code_label = $"CodeLabel"
 #wearing variable
-@onready var hair = $"../Person/hair"
-@onready var tops = $"../Person/tops"
-@onready var bottoms = $"../Person/bottoms"
-@onready var dresses = $"../Person/dresses"
-@onready var socks = $"../Person/socks"
-@onready var shoes = $"../Person/shoes"
+@onready var hair = $"Person/hair"
+@onready var tops = $"Person/tops"
+@onready var bottoms = $"Person/bottoms"
+@onready var dresses = $"Person/dresses"
+@onready var socks = $"Person/socks"
+@onready var shoes = $"Person/shoes"
+
 
 #outfit code
 var current_hair = -1 #not wearing
@@ -31,38 +29,9 @@ var dresses_total = 1;
 var socks_total = 1;
 var shoes_total = 2;
 
-var saved_codes = [ #four savings
-	"",#0
-	"",#1
-	"",#2
-	"" #3
-]
-
 
 func _ready():
-	hide_closet()
-	hide_wearing()
-	
-
-	
-func hide_closet(): #hide all the clothes(in closet) before started
-	for c in clothes.get_children():
-		c.visible = false
-
-func hide_wearing():#hide all the clothes(wearing) before started
-	for h in hair.get_children():
-		h.visible = false
-	for t in tops.get_children():
-		t.visible = false
-	for b in bottoms.get_children():
-		b.visible = false
-	for d in dresses.get_children():
-		d.visible = false
-	for so in socks.get_children():
-		so.visible = false
-	for sh in shoes.get_children():
-		sh.visible = false
-		
+	load_code(Global.final_outfit)
 
 func generate_code():
 	return (
@@ -79,7 +48,7 @@ func update_code():
 
 func load_code(code):
 	
-	wear_hair(e_code(code[0]),false)
+	wear_hair(e_code((code[0])),false)
 	wear_top(e_code(code[1]),false)
 	wear_bottoms(e_code(code[2]),false)
 	wear_dresses(e_code(code[3]),false)
@@ -89,7 +58,6 @@ func load_code(code):
 func e_code(index): #e means "not wearing"
 	if index == "e":
 		return -1
-
 	return int(index)
 	
 func index_to_code(index):
@@ -113,14 +81,10 @@ func random_code():
 		current_bottoms = -1
 		current_dresses = randi_range(0,dresses_total)
 
-	hide_wearing()
 	load_code(generate_code())
 
 
-func show_clothes(index):#show clothes from the index
-	for i in range(clothes.get_child_count()):
-		var c = clothes.get_child(i)
-		c.visible = (i == index)
+
 
 
 func wear_hair(index, toggle = true):
@@ -201,7 +165,7 @@ func wear_socks(index, toggle = true):
 func wear_shoes(index, toggle = true):
 	if toggle==true and current_shoes == index:#click again to unwear
 		current_shoes = -1
-		for sh in shoes.get_children():
+		for sh in tops.get_children():
 			sh.visible = false
 		return
 	current_shoes = index
@@ -218,156 +182,10 @@ func show_group(group):
 	for i in group.get_children():
 		i.visible = true
 
-#closet button pressed
-func _on_0_pressed() -> void:
-	show_clothes(0);
-
-func _on_1_pressed() -> void:
-	show_clothes(1);
-
-func _on_2_pressed() -> void:
-	show_clothes(2);
-
-func _on_3_pressed() -> void:
-	show_clothes(3);
-
-func _on_4_pressed() -> void:
-	show_clothes(4);
-
-func _on_5_pressed() -> void:
-	show_clothes(5);
-
-#clothes pressed
-func _on_0a_pressed() -> void:
-	wear_hair(0);
-	update_code()
-
-func _on_0b_pressed() -> void:
-	wear_hair(1)
-	update_code()
-
-func _on_0c_pressed() -> void:
-	wear_hair(2)
-	update_code()
-
-func _on_0d_pressed() -> void:
-	wear_hair(3)
-	update_code()
-
-
-func _on_1a_pressed() -> void:
-	wear_top(0);
-	update_code()
-
-func _on_1b_pressed() -> void:
-	wear_top(1);
-	update_code()
-
-func _on_2a_pressed() -> void:
-	wear_bottoms(0);
-	update_code()
-
-func _on_2b_pressed() -> void:
-	wear_bottoms(1);
-	update_code()
-
-func _on_3a_pressed() -> void:
-	wear_dresses(0);
-	update_code()
-
-func _on_3b_pressed() -> void:
-	wear_dresses(1);
-	update_code()
-
-func _on_4a_pressed() -> void:
-	wear_socks(0);
-	update_code()
-
-func _on_4b_pressed() -> void:
-	wear_socks(1);
-	update_code()
-	
-func _on_5a_pressed() -> void:
-	wear_shoes(0);
-	update_code()
-
-func _on_5b_pressed() -> void:
-	wear_shoes(1);
-	update_code()
-
-#ui
-func _on_reset_pressed() -> void:
-	wear_hair(-1);
-	wear_top(-1);
-	wear_bottoms(-1);
-	wear_dresses(-1);
-	wear_socks(-1);
-	wear_shoes(-1);	
-
-func _on_random_pressed() -> void:
-	random_code()
-
-func _on_load_button_pressed() -> void:
-	var code = code_input.text 
-	load_code(code)
 
 func _on_home_pressed() -> void:
 	Transition.change_scene(StartPage)
 
 
-func _on_result_pressed() -> void:
-	Global.final_outfit = generate_code()
-	print(Global.final_outfit)
-	Transition.change_scene(ResultPage)
-
-
-func _on_1c_pressed() -> void:
-	wear_top(2)
-	update_code()
-
-func _on_2c_pressed() -> void:
-	wear_bottoms(2)
-	update_code()
-
-func _on_5c_pressed() -> void:
-	wear_shoes(2)
-	update_code()
-
-
-func load_wardrobe(save):
-
-	if saved_codes[save] == "":
-		return
-
-	load_code(saved_codes[save])
-
-
-func _on_wardrobe_pressed() -> void:
-	show_clothes(6)
-
-
-func _on_save_1_pressed() -> void:
-	saved_codes[0] = generate_code()
-
-func _on_save_2_pressed() -> void:
-	saved_codes[1] = generate_code()
-
-func _on_save_3_pressed() -> void:
-	saved_codes[2] = generate_code()
-
-func _on_save_4_pressed() -> void:
-	saved_codes[3] = generate_code()
-
-
-
-func _on_load_1_pressed() -> void:
-	load_wardrobe(0)
-
-func _on_load_2_pressed() -> void:
-	load_wardrobe(1)
-
-func _on_load_3_pressed() -> void:
-	load_wardrobe(2)
-
-func _on_load_4_pressed() -> void:
-	load_wardrobe(3)
+func _on_game_pressed() -> void:
+	Transition.change_scene(Game)
