@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cc45qau76ccba"]
 
 [ext_resource type="Texture2D" uid="uid://yy4mc4gpw7h" path="res://assets/mainGame/person.png" id="1_5xxbx"]
+[ext_resource type="Script" uid="uid://djk7vm5oexteo" path="res://person.gd" id="2_0w2ho"]
 [ext_resource type="Texture2D" uid="uid://6u40qrn7d61h" path="res://assets/mainGame/wearing/0B.png" id="2_pw1l0"]
 [ext_resource type="Texture2D" uid="uid://mufo6d2t8cwm" path="res://assets/mainGame/wearing/0A.png" id="3_0w2ho"]
 [ext_resource type="Texture2D" uid="uid://c8ipiqwnwtrgh" path="res://assets/mainGame/wearing/0D.PNG" id="4_3roi3"]
@@ -21,6 +22,7 @@
 
 [node name="Person" type="Sprite2D" unique_id=640127103]
 texture = ExtResource("1_5xxbx")
+script = ExtResource("2_0w2ho")
 
 [node name="hair" type="Node2D" parent="." unique_id=1162876204]
 
